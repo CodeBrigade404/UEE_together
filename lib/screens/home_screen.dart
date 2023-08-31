@@ -1,4 +1,6 @@
-import 'package:event_booking_app/utils/colors.dart';
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:event_booking_app/Firebase/firebase_authentication.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -9,16 +11,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentIndex = 0;
-  final pageController = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.logout),
+          onPressed: () async {
+            await logout();
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: const Center(
         child: Text(
           "Home Screen",
-          style: TextStyle(color: appGreyColor, fontSize: 30),
+          style: TextStyle(color: Colors.grey, fontSize: 30),
         ),
       ),
     );
