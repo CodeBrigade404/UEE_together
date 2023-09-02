@@ -5,6 +5,7 @@ import 'package:event_booking_app/screens/home_screen.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:event_booking_app/utils/font_styles.dart';
 import 'package:event_booking_app/utils/indictors.dart';
+import 'package:event_booking_app/utils/strings.dart';
 import 'package:event_booking_app/widgets/intro_image_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -57,12 +58,12 @@ class _IntroScreenState extends State<IntroScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "乇VENT乙",
+                      AppStrings.introPageTitle,
                       textAlign: TextAlign.center,
                       style: introTitleStyle,
                     ),
                     Text(
-                      "Get Ready To Book Your Next Adventure\nMusic gives a soul to the universe,\n wings to the mind, flight to the imagination\n and life to everything.",
+                      AppStrings.introPageDescription,
                       style: introNormalStyle.copyWith(
                         color: Colors.grey,
                         fontWeight: FontWeight.w400,
@@ -101,7 +102,10 @@ class _IntroScreenState extends State<IntroScreen> {
                         MaterialPageRoute(builder: (_) => const HomeScreen()));
                   }
                 },
-                child: const Text("Sign Up with Email"),
+                child: const Text(
+                  AppStrings.introSignInButtonText,
+                  style: TextStyle(color: appGreyColor),
+                ),
               ),
             ),
           )
