@@ -1,33 +1,95 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:event_booking_app/Firebase/firebase_authentication.dart';
+import 'package:event_booking_app/screens/artists_display_screen.dart';
+import 'package:event_booking_app/screens/category_display_screen.dart';
+import 'package:event_booking_app/screens/events_display_screen.dart';
+import 'package:event_booking_app/screens/events_locations_display_screen.dart';
+import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentIndex = 0;
+  final pageController = PageController(initialPage: 0);
+
+  // tabbar icons
+  final tabBarIcons = [
+    FontAwesomeIcons.house,
+    FontAwesomeIcons.list,
+    FontAwesomeIcons.userGroup,
+    FontAwesomeIcons.compass,
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.logout),
-          onPressed: () async {
-            await logout();
-            Navigator.pop(context);
-          },
-        ),
-      ),
-      body: const Center(
-        child: Text(
-          "Home Screen",
-          style: TextStyle(color: Colors.grey, fontSize: 30),
+      body: SafeArea(
+        bottom: false,
+        child: Stack(
+          children: [
+            PageView(
+              controller: pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  currentIndex = index;
+                });
+              },
+              children: const [
+                EventDisplayScreen(),
+                CategoryDisplayScreen(),
+                ArtistsScreen(),
+                EventLocationsScreen(),
+              ],
+            ),
+
+            // bottom bar
+            Positioned(
+              bottom: 20,
+              left: 20,
+              right: 20,
+              child: Container(
+                alignment: Alignment.center,
+                height: 70,
+                decoration: BoxDecoration(
+                  color: appBackgroundColor,
+                  borderRadius: BorderRadius.circular(40.0),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ...tabBarIcons.asMap().entries.map(
+                      (entry) {
+                        final index = entry.key;
+                        final icon = entry.value;
+                        return IconButton(
+                          onPressed: () {
+                            setState(() {
+                              currentIndex = index;
+                            });
+                            pageController.jumpToPage(index);
+                          },
+                          icon: Icon(
+                            icon,
+                            color: currentIndex == index
+                                ? Colors.white
+                                : Colors.white60,
+                            size: 22,
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
