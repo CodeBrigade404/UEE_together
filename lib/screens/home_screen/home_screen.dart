@@ -1,9 +1,9 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:event_booking_app/screens/artists_display_screen.dart';
-import 'package:event_booking_app/screens/category_display_screen.dart';
-import 'package:event_booking_app/screens/events_display_screen.dart';
-import 'package:event_booking_app/screens/events_locations_display_screen.dart';
+import 'package:event_booking_app/screens/artists_screen/artists_display_screen.dart';
+import 'package:event_booking_app/screens/category_screen/category_display_screen.dart';
+import 'package:event_booking_app/screens/event_screen/events_display_screen.dart';
+import 'package:event_booking_app/screens/event_screen/events_locations_display_screen.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   final pageController = PageController(initialPage: 0);
 
-  // tabbar icons
+  // tabBar icons
   final tabBarIcons = [
     FontAwesomeIcons.house,
     FontAwesomeIcons.list,

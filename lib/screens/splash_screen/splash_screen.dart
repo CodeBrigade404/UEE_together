@@ -1,12 +1,12 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:event_booking_app/Firebase/firebase_authentication.dart';
-import 'package:event_booking_app/screens/home_screen.dart';
+import 'package:event_booking_app/screens/home_screen/home_screen.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:event_booking_app/utils/font_styles.dart';
 import 'package:event_booking_app/utils/indictors.dart';
 import 'package:event_booking_app/utils/strings.dart';
-import 'package:event_booking_app/widgets/intro_image_list_view.dart';
+import 'package:event_booking_app/screens/splash_screen/components/intro_image_list_view.dart';
 import 'package:flutter/material.dart';
 
 class IntroScreen extends StatefulWidget {

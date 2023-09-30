@@ -1,5 +1,5 @@
 import 'package:event_booking_app/Firebase/firebase_options.dart';
-import 'package:event_booking_app/screens/into_screen.dart';
+import 'package:event_booking_app/screens/splash_screen/splash_screen.dart';
 import 'package:event_booking_app/utils/strings.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

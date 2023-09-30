@@ -1,7 +1,7 @@
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:event_booking_app/utils/strings.dart';
-import 'package:event_booking_app/widgets/event_list_view.dart';
-import 'package:event_booking_app/widgets/top_bar_container.dart';
+import 'package:event_booking_app/screens/event_screen/components/event_list_view.dart';
+import 'package:event_booking_app/screens/home_screen/components/top_bar_container.dart';
 import 'package:flutter/material.dart';
 
 class EventDisplayScreen extends StatefulWidget {

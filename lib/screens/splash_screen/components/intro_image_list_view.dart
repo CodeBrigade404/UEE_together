@@ -20,7 +20,7 @@ class _ImageListViewState extends State<ImageListView> {
     super.initState();
     _scrollController.addListener(() {
       if (!_scrollController.position.atEdge) {
-        // implemnet scroll of list
+        // implement scroll of list
         _autoScroll();
       }
       // adding to list
