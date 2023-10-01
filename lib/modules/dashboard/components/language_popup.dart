@@ -1,4 +1,6 @@
+import 'package:event_booking_app/main.dart';
 import 'package:event_booking_app/models/language_model/language.dart';
+import 'package:event_booking_app/models/language_model/language_constant.dart';
 import 'package:flutter/material.dart';
 
 class LanguageDialog {
@@ -14,9 +16,13 @@ class LanguageDialog {
             children: Language.languageList().map((Language language) {
               return ListTile(
                 title: Text(language.name),
-                onTap: () {
-                  onLanguageSelected(language.name);
-                  Navigator.of(context).pop(); // Close the dialog
+                onTap: () async {
+                  final localContext = context;
+                  setLocale(language.languageCode).then((Locale local) {
+                    MyApp.setLocale(localContext, local);
+                    onLanguageSelected(language.name);
+                    Navigator.of(localContext).pop();
+                  });
                 },
               );
             }).toList(),

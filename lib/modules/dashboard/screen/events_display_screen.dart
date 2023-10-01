@@ -1,7 +1,8 @@
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:event_booking_app/utils/strings.dart';
-import 'package:event_booking_app/screens/event_screen/components/event_list_view.dart';
-import 'package:event_booking_app/screens/home_screen/components/top_bar_container.dart';
+import 'package:event_booking_app/modules/dashboard/components/event_list_view.dart';
+import 'package:event_booking_app/modules/dashboard/components/top_bar_container.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class EventDisplayScreen extends StatefulWidget {
@@ -35,8 +36,8 @@ class _EventDisplayScreenState extends State<EventDisplayScreen>
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
       child: Column(
         children: [
-          const TopContainer(
-            title: AppStrings.homePageAppTitle,
+          TopContainer(
+            title: AppLocalizations.of(context)!.homePage,
             searchBarTitle: AppStrings.homePageSearchBarTitle,
           ),
           TabBar(

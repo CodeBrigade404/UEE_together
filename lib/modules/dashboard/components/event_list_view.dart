@@ -1,4 +1,4 @@
-import 'package:event_booking_app/local_storage/intro_data.dart';
+import 'package:event_booking_app/local_storage/data.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
