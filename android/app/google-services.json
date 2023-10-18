@@ -37,6 +37,13 @@
             {
               "client_id": "376548133689-gbnqcb4cdbutpjmjqvc4qoboae46lrfq.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "376548133689-ielodr25kv5a94q5mb5ua29cvtd6e453.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.eventBookingApp"
+              }
             }
           ]
         }
