@@ -37,7 +37,7 @@ class _EventDisplayScreenState extends State<EventDisplayScreen>
       child: Column(
         children: [
           TopContainer(
-            title: translation(context).homePage,
+            title: translation(context).userHomeScreenTitle,
             searchBarTitle: AppStrings.homePageSearchBarTitle,
           ),
           TabBar(

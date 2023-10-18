@@ -42,7 +42,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: AppLocalizations.of(context)?.homePage ?? AppStrings.appName,
+        title: AppLocalizations.of(context)?.userHomeScreenTitle ??
+            AppStrings.appName,
         theme: ThemeData(
           primarySwatch: Colors.grey,
         ),
