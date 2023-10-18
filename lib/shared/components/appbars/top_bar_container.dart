@@ -1,8 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors
 
-import 'package:event_booking_app/models/language_model/language.dart';
-import 'package:event_booking_app/modules/dashboard/components/language_popup.dart';
-import 'package:event_booking_app/modules/profile/screens/profile_page.dart';
+import 'package:event_booking_app/modules/user/user_dashboard/components/language_popup.dart';
+import 'package:event_booking_app/modules/user/user_profile/screens/profile_page.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:event_booking_app/utils/font_styles.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:event_booking_app/Firebase/firebase_authentication.dart';
-import 'package:event_booking_app/modules/dashboard/screen/home_screen.dart';
+import 'package:event_booking_app/modules/auth/sign_in/sign_in.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:event_booking_app/utils/font_styles.dart';
 import 'package:event_booking_app/utils/indictors.dart';
@@ -24,11 +23,11 @@ class _IntroScreenState extends State<IntroScreen> {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          Positioned(
+          const Positioned(
             top: -10,
             left: -150,
             child: Row(
-              children: const [
+              children: [
                 ImageListView(startIndex: 0),
                 ImageListView(startIndex: 1),
                 ImageListView(startIndex: 2),
@@ -87,23 +86,29 @@ class _IntroScreenState extends State<IntroScreen> {
             left: 20,
             right: 20,
             child: SizedBox(
-              height: 55,
+              height: 50,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: appBackgroundColor,
+                  backgroundColor: appBackgroundColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                 ),
-                onPressed: () async {
-                  await signInWithGoogle();
+                // onPressed: () async {
+                //   await signInWithGoogle();
+                //   if (mounted) {
+                //     Navigator.push(context,
+                //         MaterialPageRoute(builder: (_) => const HomeScreen()));
+                //   }
+                // },
+                onPressed: () {
                   if (mounted) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const HomeScreen()));
+                        MaterialPageRoute(builder: (_) => const LoginScreen()));
                   }
                 },
                 child: const Text(
-                  AppStrings.introSignInButtonText,
+                  AppStrings.introContinueButtonText,
                   style: TextStyle(color: appGreyColor),
                 ),
               ),
