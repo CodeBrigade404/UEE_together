@@ -1,5 +1,5 @@
 import 'package:event_booking_app/local_storage/data.dart';
-import 'package:event_booking_app/modules/dashboard/components/top_bar_container.dart';
+import 'package:event_booking_app/shared/components/appBars/top_bar_container.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
