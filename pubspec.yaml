@@ -46,6 +46,7 @@ dependencies:
   cloud_firestore: ^4.10.0
   dropdown_button2: ^2.3.9
   flutter_svg: ^2.0.7
+  qr_flutter: ^4.1.0
 
 dev_dependencies:
   flutter_test:
