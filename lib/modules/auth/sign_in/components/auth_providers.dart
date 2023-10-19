@@ -1,5 +1,5 @@
 import 'package:event_booking_app/Firebase/firebase_authentication.dart';
-import 'package:event_booking_app/modules/user/user_dashboard/screen/home_screen.dart';
+import 'package:event_booking_app/modules/user/user_dashboard/screen/user_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -34,7 +34,7 @@ class _AuthProvidersState extends State<AuthProviders> {
                   await signInWithGoogle();
                   if (mounted) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const HomeScreen()));
+                        MaterialPageRoute(builder: (_) => const UserHomeScreen()));
                   }
                 },
                 child: SvgPicture.asset(
