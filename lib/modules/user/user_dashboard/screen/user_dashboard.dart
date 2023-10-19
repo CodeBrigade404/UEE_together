@@ -3,6 +3,7 @@ import 'package:event_booking_app/modules/user/bookings/bookings.dart';
 import 'package:event_booking_app/modules/user/discover/discover.dart';
 import 'package:event_booking_app/modules/user/discover/notifications.dart';
 import 'package:event_booking_app/modules/user/profile/profile.dart';
+import 'package:event_booking_app/modules/user/user_category/screen/category_display_screen.dart';
 import 'package:event_booking_app/modules/user/user_dashboard/components/language_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,21 +19,29 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
   var currentIndex = 0;
 
   final discover = const DiscoverScreen();
+
+  final category = const CategoryDisplayScreen();
   final bookings = const BookingsScreen();
+
   final profile = const ProfileScreen();
 
   late List<Widget> _screens;
 
   @override
   void initState() {
-    _screens = [discover, bookings, profile];
+    _screens = [
+      discover,
+      category,
+      bookings,
+      profile,
+    ];
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 249, 242, 253),
+      backgroundColor: const Color.fromARGB(255, 249, 242, 253),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 4.0,
@@ -82,11 +91,21 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
       ),
       body: _screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.black, // Set the selected item color to black
+        unselectedItemColor: Colors.black45,
+        unselectedLabelStyle: const TextStyle(color: Colors.black45),
         currentIndex: currentIndex,
+        showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: Icon(
+              Icons.search,
+            ),
             label: 'Discover',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.category_outlined),
+            label: 'Category',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.picture_in_picture_alt_outlined),
