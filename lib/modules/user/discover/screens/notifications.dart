@@ -1,5 +1,4 @@
 import 'package:event_booking_app/core/assets.dart';
-import 'package:event_booking_app/core/widgets/button.dart';
 import 'package:event_booking_app/core/widgets/card.dart';
 import 'package:flutter/material.dart';
 
@@ -55,10 +54,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 class _BookingStatusChanged extends StatelessWidget {
   const _BookingStatusChanged({
     Key? key,
-    this.isSowable = true,
   }) : super(key: key);
-
-  final bool isSowable;
 
   @override
   Widget build(BuildContext context) {
@@ -125,12 +121,6 @@ class _BookingStatusChanged extends StatelessWidget {
                   ],
                 ),
               ),
-              if (isSowable)
-                MyButton(
-                  label: 'Redeem',
-                  icon: const Icon(Icons.redeem),
-                  onTap: () {},
-                ),
             ],
           ),
         ],
