@@ -1,6 +1,6 @@
 import 'package:event_booking_app/core/assets.dart';
+import 'package:event_booking_app/core/widgets/card.dart';
 import 'package:flutter/material.dart';
-
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -70,8 +70,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const Divider(),
               ListTile(
                 title: const Text('Settings'),
-                subtitle:
-                    const Text('Change application, language & notification options'),
+                subtitle: const Text(
+                    'Change application, language & notification options'),
                 trailing: const Icon(Icons.arrow_forward_ios_rounded),
                 onTap: () {},
               ),
@@ -83,25 +83,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 onTap: () {},
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Material(
-                  color: Colors.grey[300],
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(50),
-                  ),
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: MyCard(
                   child: InkWell(
                     onTap: () {},
                     borderRadius: const BorderRadius.all(
                       Radius.circular(50),
                     ),
                     child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: EdgeInsets.symmetric(vertical: 5),
                       child: Center(
-                        child: Text(
-                          'Logout',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.exit_to_app, 
+                              color: Color.fromARGB(255, 0, 6, 11), 
+                            ),
+                            SizedBox(
+                                width:
+                                    8), 
+                            Text(
+                              'Logout',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -126,7 +134,10 @@ class _ProfileDetails extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.blue, Colors.indigo],
+          colors: [
+            Color.fromARGB(255, 135, 135, 135),
+            Color.fromARGB(255, 0, 6, 37)
+          ],
           stops: [0, 1],
         ),
         borderRadius: BorderRadius.all(
@@ -194,7 +205,7 @@ class _ProfileDetails extends StatelessWidget {
             right: 10,
             bottom: 10,
             child: Material(
-              color: Colors.blue,
+              color: const Color.fromARGB(255, 135, 135, 135),
               borderRadius: const BorderRadius.all(
                 Radius.circular(20),
               ),

@@ -1,7 +1,7 @@
 import 'package:event_booking_app/core/widgets/card.dart';
 import 'package:event_booking_app/models/booking_model/booking_model.dart';
-import 'package:event_booking_app/modules/user/bookings/components/booking_event_list_item.dart';
-import 'package:event_booking_app/modules/user/bookings/components/booking_status_button.dart';
+import 'package:event_booking_app/modules/user/user_bookings/components/booking_event_list_item.dart';
+import 'package:event_booking_app/modules/user/user_bookings/components/booking_status_button.dart';
 import 'package:flutter/material.dart';
 
 class BookingsScreen extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:event_booking_app/modules/user/bookings/screens/booking_details.dart';
+import 'package:event_booking_app/modules/user/user_bookings/screens/booking_details.dart';
 import 'package:flutter/material.dart';
 
 class EventListItem extends StatelessWidget {
