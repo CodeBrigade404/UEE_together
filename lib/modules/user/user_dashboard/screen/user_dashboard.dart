@@ -1,7 +1,7 @@
 import 'package:event_booking_app/modules/auth/sign_in/sign_in.dart';
-import 'package:event_booking_app/modules/user/bookings/bookings.dart';
-import 'package:event_booking_app/modules/user/discover/discover.dart';
-import 'package:event_booking_app/modules/user/discover/notifications.dart';
+import 'package:event_booking_app/modules/user/bookings/screens/bookings.dart';
+import 'package:event_booking_app/modules/user/discover/screens/discover.dart';
+import 'package:event_booking_app/modules/user/discover/screens/notifications.dart';
 import 'package:event_booking_app/modules/user/profile/profile.dart';
 import 'package:event_booking_app/modules/user/user_category/screen/category_display_screen.dart';
 import 'package:event_booking_app/modules/user/user_dashboard/components/language_popup.dart';
