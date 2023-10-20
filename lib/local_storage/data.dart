@@ -15,34 +15,82 @@ class Event {
 class EventCategory {
   final String eventCategoryName;
   final String eventThumbnailImage;
+  final String description;
 
   const EventCategory({
     required this.eventCategoryName,
     required this.eventThumbnailImage,
+    required this.description,
   });
 }
 
-// list of categories
 final eventCategories = [
   const EventCategory(
-    eventCategoryName: "Test1",
+    eventCategoryName: "Concerts",
     eventThumbnailImage:
-        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/06/EVENT-INTERSTELLAR-28-JULY-2023.jpg",
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description: "Enjoy live music and performances at top concerts in town.",
   ),
   const EventCategory(
-    eventCategoryName: "test2",
+    eventCategoryName: "Sporting Events",
     eventThumbnailImage:
-        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/06/EVENT-INTERSTELLAR-28-JULY-2023.jpg",
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description:
+        "Witness thrilling sports events and cheer for your favorite teams.",
   ),
   const EventCategory(
-    eventCategoryName: "test3",
+    eventCategoryName: "Festivals",
     eventThumbnailImage:
-        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/06/EVENT-INTERSTELLAR-28-JULY-2023.jpg",
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description:
+        "Celebrate cultural diversity and traditions at vibrant festivals.",
   ),
   const EventCategory(
-    eventCategoryName: "test4",
+    eventCategoryName: "Art Exhibitions",
     eventThumbnailImage:
-        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/06/EVENT-INTERSTELLAR-28-JULY-2023.jpg",
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description: "Explore captivating artworks from talented artists.",
+  ),
+  const EventCategory(
+    eventCategoryName: "Food and Drink",
+    eventThumbnailImage:
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description:
+        "Savor delicious culinary delights and beverages from around the world.",
+  ),
+  const EventCategory(
+    eventCategoryName: "Family Fun",
+    eventThumbnailImage:
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description:
+        "Enjoy quality time with your family at fun-filled events and activities.",
+  ),
+  const EventCategory(
+    eventCategoryName: "Conferences",
+    eventThumbnailImage:
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description: "Attend informative conferences and gain valuable insights.",
+  ),
+  const EventCategory(
+    eventCategoryName: "Outdoor Adventures",
+    eventThumbnailImage:
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description:
+        "Embark on thrilling outdoor adventures and explore the great outdoors.",
+  ),
+  const EventCategory(
+    eventCategoryName: "Comedy Shows",
+    eventThumbnailImage:
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description:
+        "Laugh your heart out at hilarious comedy shows and stand-up performances.",
+  ),
+  const EventCategory(
+    eventCategoryName: "Educational",
+    eventThumbnailImage:
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/04/16-04-2023-1.jpg",
+    description:
+        "Expand your knowledge with informative and educational events.",
   ),
 ];
 

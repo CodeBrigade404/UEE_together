@@ -21,7 +21,7 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.grey[300],
-      borderRadius: BorderRadius.all(
+      borderRadius: const BorderRadius.all(
         Radius.circular(20),
       ),
       child: InkWell(
@@ -37,7 +37,7 @@ class MyButton extends StatelessWidget {
               const SizedBox(width: 5),
               Text(
                 label ?? '',
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
