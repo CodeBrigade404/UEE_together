@@ -1,3 +1,13 @@
+class CarouselItem {
+  final String imageUrl;
+  final String name;
+
+  CarouselItem({
+    required this.imageUrl,
+    required this.name,
+  });
+}
+
 class Discover {
   final String imageUrl;
   final String title;
@@ -12,8 +22,8 @@ class Discover {
   final String eventTime;
   final String eventVenue;
   final String eventDescription;
-  final List<String> artistLineup;
-
+  final List<CarouselItem> artistLineup;
+  final List<CarouselItem> carouselItems;
   Discover({
     required this.imageUrl,
     required this.title,
@@ -29,6 +39,7 @@ class Discover {
     required this.eventVenue,
     required this.eventDescription,
     required this.artistLineup,
+    required this.carouselItems,
   });
 }
 
@@ -47,7 +58,30 @@ final discoverEventImages = <Discover>[
     eventTime: '19:00',
     eventVenue: 'Colombo Stadium',
     eventDescription: 'Join us for a night of music and fun!',
-    artistLineup: ['Artist 1', 'Artist 2', 'Artist 3'],
+    artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
   Discover(
     imageUrl:
@@ -64,7 +98,30 @@ final discoverEventImages = <Discover>[
     eventTime: '18:30',
     eventVenue: 'Colombo Arena',
     eventDescription: 'Explore diverse cultures through music!',
-    artistLineup: ['Artist X', 'Artist Y', 'Artist Z'],
+    artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
   Discover(
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004950.jpg",
@@ -80,7 +137,30 @@ final discoverEventImages = <Discover>[
     eventTime: '10:00',
     eventVenue: 'Wellness Center',
     eventDescription: 'A day of wellness and self-care!',
-    artistLineup: [],
+    artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
   Discover(
     imageUrl:
@@ -98,7 +178,30 @@ final discoverEventImages = <Discover>[
     eventTime: '15:30',
     eventVenue: 'Adrenaline Park',
     eventDescription: 'Witness thrilling stunts and adrenaline-pumping action!',
-    artistLineup: [],
+    artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
   Discover(
     imageUrl: "https://decibel.lk/assets/2022/12/Guy-J-Live-In-Sri-Lanka.jpg",
@@ -114,7 +217,30 @@ final discoverEventImages = <Discover>[
     eventTime: '20:00',
     eventVenue: 'Jazz Lounge',
     eventDescription: 'An evening of smooth jazz and blues melodies!',
-    artistLineup: ['Jazz Artist A', 'Blues Artist B'],
+     artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
 ];
 
@@ -133,7 +259,30 @@ final discoverUpComingEventImages = <Discover>[
     eventTime: '18:30',
     eventVenue: 'Colombo Arena',
     eventDescription: 'Dance the night away to live music!',
-    artistLineup: ['Groovy Artist X', 'Funky Artist Y'],
+    artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
   Discover(
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004821.jpg",
@@ -149,7 +298,30 @@ final discoverUpComingEventImages = <Discover>[
     eventTime: '19:30',
     eventVenue: 'Pearl Stadium',
     eventDescription: 'Rock out with legendary rock bands!',
-    artistLineup: ['Rock Band A', 'Rock Band B', 'Rock Band C'],
+    artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
   Discover(
     imageUrl:
@@ -167,7 +339,30 @@ final discoverUpComingEventImages = <Discover>[
     eventTime: '20:00',
     eventVenue: 'Fusion Center',
     eventDescription: 'A fusion of Sri Lankan musical traditions!',
-    artistLineup: ['Fusion Artist A', 'Fusion Artist B'],
+    artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
   Discover(
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004740.jpg",
@@ -184,7 +379,30 @@ final discoverUpComingEventImages = <Discover>[
     eventTime: '16:00',
     eventVenue: 'Rhythm Park',
     eventDescription: 'Dance to the vibrant rhythms of Sri Lanka!',
-    artistLineup: ['Dance Troupe X', 'Musician Y'],
+    artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
   Discover(
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004413.jpg",
@@ -201,6 +419,29 @@ final discoverUpComingEventImages = <Discover>[
     eventTime: '17:30',
     eventVenue: 'Beachfront Stage',
     eventDescription: 'Relax and unwind with seaside jazz melodies!',
-    artistLineup: ['Beach Jazz Ensemble'],
+    artistLineup: [
+      CarouselItem(
+        imageUrl: 'Artist1ImageURL',
+        name: 'Artist 1',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist2ImageURL',
+        name: 'Artist 2',
+      ),
+      CarouselItem(
+        imageUrl: 'Artist3ImageURL',
+        name: 'Artist 3',
+      ),
+    ],
+    carouselItems: [
+      CarouselItem(
+        imageUrl: 'CarouselImage1URL',
+        name: 'Image 1',
+      ),
+      CarouselItem(
+        imageUrl: 'CarouselImage2URL',
+        name: 'Image 2',
+      ),
+    ],
   ),
 ];

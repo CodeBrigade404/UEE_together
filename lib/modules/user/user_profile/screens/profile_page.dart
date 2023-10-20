@@ -69,11 +69,11 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             const SizedBox(height: 20.0),
             if (_isExpanded)
-              Padding(
-                padding: const EdgeInsets.all(16.0),
+              const Padding(
+                padding: EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'About Me:',
                       style: TextStyle(

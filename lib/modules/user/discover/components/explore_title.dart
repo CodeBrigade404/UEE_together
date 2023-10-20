@@ -18,7 +18,9 @@ class ExploreItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const EventDetailsScreen(),
+            builder: (context) => EventDetailsScreen(
+              item: item,
+            ),
           ),
         );
       },
