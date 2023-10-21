@@ -2,8 +2,8 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:event_booking_app/modules/artist/artist_dashboard/artist_dashboard.dart';
-import 'package:event_booking_app/modules/auth/sign_in/sign_in.dart';
-import 'package:event_booking_app/modules/organizer/homepage/homepage.dart';
+import 'package:event_booking_app/modules/auth/sign_in.dart';
+import 'package:event_booking_app/modules/organizer/org_home/homepage.dart';
 import 'package:event_booking_app/modules/user/user_dashboard/screen/user_dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';

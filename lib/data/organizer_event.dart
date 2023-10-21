@@ -1,10 +1,7 @@
-import 'package:event_booking_app/modules/organizer/MyEvents/component/single_event.dart';
-import 'package:event_booking_app/modules/organizer/model/event.dart';
-import 'package:flutter/material.dart';
-
+import 'package:event_booking_app/models/organizer_model.dart';
 
 final eventList = [
-  const Event(
+  const OrganizerEvent(
     title: "Bentota Beach Fiesta",
     type: "indoor",
     image: "https://countryconcert.com/assets/images/cc21-800-3-dsc8559.jpg",
@@ -15,7 +12,7 @@ final eventList = [
     price: 200,
     quantity: 500,
   ),
-  const Event(
+  const OrganizerEvent(
     title: "Gampaha Music Festival",
     type: "outdoor",
     image:
@@ -27,7 +24,7 @@ final eventList = [
     price: 300.50,
     quantity: 800,
   ),
-  const Event(
+  const OrganizerEvent(
     title: "Jazz in the Park",
     type: "outdoor",
     image:
@@ -39,7 +36,7 @@ final eventList = [
     price: 150.75,
     quantity: 300,
   ),
-  const Event(
+  const OrganizerEvent(
     title: "Rock n' Roll Night",
     type: "indoor",
     image:
@@ -51,7 +48,7 @@ final eventList = [
     price: 250.99,
     quantity: 400,
   ),
-  const Event(
+  const OrganizerEvent(
     title: "Classical Symphony Showcase",
     type: "indoor",
     image:
@@ -64,28 +61,3 @@ final eventList = [
     quantity: 250,
   ),
 ];
-
-class MyEventsScreen extends StatefulWidget {
-  const MyEventsScreen({Key? key}) : super(key: key);
-
-  @override
-  _MyEventsScreenState createState() => _MyEventsScreenState();
-}
-
-class _MyEventsScreenState extends State<MyEventsScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 25,
-        ),
-        child: Column(
-          children:
-              eventList.map((event) => SingleEvent(event: event)).toList(),
-        ),
-      ),
-    );
-  }
-}

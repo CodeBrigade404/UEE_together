@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:event_booking_app/local_storage/data.dart';
+import 'package:event_booking_app/data/event_data.dart';
 import 'package:flutter/material.dart';
 
 class CategoryDisplayScreen extends StatefulWidget {

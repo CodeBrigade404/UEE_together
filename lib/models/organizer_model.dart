@@ -1,4 +1,4 @@
-class Event {
+class OrganizerEvent {
   final String title;
   final String type;
   final String image;
@@ -8,7 +8,7 @@ class Event {
   final double price;
   final int quantity;
 
-  const Event({
+  const OrganizerEvent({
     required this.title,
     required this.type,
     required this.image,

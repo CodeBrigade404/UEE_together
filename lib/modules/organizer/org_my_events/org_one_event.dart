@@ -1,10 +1,10 @@
-import 'package:event_booking_app/modules/organizer/model/event.dart';
+import 'package:event_booking_app/models/organizer_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
 class OneEvent extends StatelessWidget {
-  final Event event;
+  final OrganizerEvent event;
   const OneEvent({
     Key? key,
     required this.event,

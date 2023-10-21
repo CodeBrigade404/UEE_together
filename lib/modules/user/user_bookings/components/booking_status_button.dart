@@ -1,4 +1,4 @@
-import 'package:event_booking_app/models/booking_model/booking_model.dart';
+import 'package:event_booking_app/models/booking_model.dart';
 import 'package:flutter/material.dart';
 
 class BookingStatusButton extends StatelessWidget {

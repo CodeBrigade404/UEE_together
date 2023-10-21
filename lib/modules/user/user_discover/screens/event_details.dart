@@ -1,6 +1,6 @@
 // ignore_for_file: no_logic_in_create_state
 
-import 'package:event_booking_app/models/discover_model/discover_model.dart';
+import 'package:event_booking_app/models/discover_model.dart';
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';

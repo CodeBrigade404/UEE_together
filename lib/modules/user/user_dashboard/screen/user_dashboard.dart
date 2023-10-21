@@ -1,4 +1,4 @@
-import 'package:event_booking_app/modules/auth/sign_in/sign_in.dart';
+import 'package:event_booking_app/modules/auth/sign_in.dart';
 import 'package:event_booking_app/modules/user/user_discover/screens/discover.dart';
 import 'package:event_booking_app/modules/user/user_discover/screens/notifications.dart';
 import 'package:event_booking_app/modules/user/user_profile/profile.dart';

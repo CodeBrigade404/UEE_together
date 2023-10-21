@@ -1,5 +1,5 @@
-import 'package:event_booking_app/modules/organizer/MyEvents/my_events.dart';
-import 'package:event_booking_app/modules/organizer/addEvent/add_event.dart';
+import 'package:event_booking_app/modules/organizer/org_my_events/org_my_events.dart';
+import 'package:event_booking_app/modules/organizer/org_create_event/add_event.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,7 +7,7 @@ class OrganizerHomepage extends StatefulWidget {
   const OrganizerHomepage({Key? key}) : super(key: key);
 
   @override
-  _OrganizerHomepageState createState() => _OrganizerHomepageState();
+  State<OrganizerHomepage> createState() => _OrganizerHomepageState();
 }
 
 class _OrganizerHomepageState extends State<OrganizerHomepage> {

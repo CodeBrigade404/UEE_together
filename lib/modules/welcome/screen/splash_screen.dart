@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:event_booking_app/modules/auth/sign_in/sign_in.dart';
+import 'package:event_booking_app/modules/auth/sign_in.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:event_booking_app/utils/font_styles.dart';
 import 'package:event_booking_app/utils/indictors.dart';

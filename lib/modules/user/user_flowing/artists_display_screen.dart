@@ -1,6 +1,7 @@
 // ignore_for_file: unused_field
 
-import 'package:event_booking_app/models/following_model.dart/following_model.dart';
+import 'package:event_booking_app/data/following_artist_data.dart';
+import 'package:event_booking_app/models/following_model.dart';
 import 'package:flutter/material.dart';
 
 class FollowingPage extends StatefulWidget {
@@ -12,7 +13,7 @@ class FollowingPage extends StatefulWidget {
 
 class _FollowingPageState extends State<FollowingPage>
     with TickerProviderStateMixin {
-  final List<Artist> _selectedUsers = [];
+  final List<FollowingArtist> _selectedUsers = [];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class _FollowingPageState extends State<FollowingPage>
     );
   }
 
-  userComponent({required Artist user}) {
+  userComponent({required FollowingArtist user}) {
     return Container(
       padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: Row(
@@ -66,7 +67,7 @@ class _FollowingPageState extends State<FollowingPage>
                 elevation: 0,
                 color: user.isFollowedByMe
                     ? const Color(0xffeeeeee)
-                    : const Color(0xffffff),
+                    : const Color(0x00ffffff),
                 onPressed: () {
                   setState(() {
                     user.isFollowedByMe = !user.isFollowedByMe;
