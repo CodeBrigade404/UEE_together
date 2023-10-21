@@ -1,10 +1,10 @@
-import 'package:event_booking_app/modules/auth/sign_in/sign_in.dart';
-import 'package:event_booking_app/modules/user/bookings/screens/bookings.dart';
-import 'package:event_booking_app/modules/user/discover/screens/discover.dart';
-import 'package:event_booking_app/modules/user/discover/screens/notifications.dart';
-import 'package:event_booking_app/modules/user/profile/profile.dart';
-import 'package:event_booking_app/modules/user/user_category/screen/category_display_screen.dart';
+import 'package:event_booking_app/modules/auth/sign_in.dart';
+import 'package:event_booking_app/modules/user/user_discover/screens/discover.dart';
+import 'package:event_booking_app/modules/user/user_discover/screens/notifications.dart';
+import 'package:event_booking_app/modules/user/user_profile/profile.dart';
+import 'package:event_booking_app/modules/user/user_category/category_display_screen.dart';
 import 'package:event_booking_app/modules/user/user_dashboard/components/language_popup.dart';
+import 'package:event_booking_app/modules/user/user_flowing/artists_display_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -17,23 +17,15 @@ class UserHomeScreen extends StatefulWidget {
 
 class _UserHomeScreenState extends State<UserHomeScreen> {
   var currentIndex = 0;
-
-  final discover = const DiscoverScreen();
-
-  final category = const CategoryDisplayScreen();
-  final bookings = const BookingsScreen();
-
-  final profile = const ProfileScreen();
-
-  late List<Widget> _screens;
+  late final List<Widget> _screens;
 
   @override
   void initState() {
     _screens = [
-      discover,
-      category,
-      bookings,
-      profile,
+      const DiscoverScreen(),
+      const CategoryDisplayScreen(),
+      const FollowingPage(),
+      const ProfileScreen(),
     ];
     super.initState();
   }
@@ -41,7 +33,9 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 249, 242, 253),
+      extendBodyBehindAppBar: true,
+      backgroundColor: const Color(0xFFF9F2FD), // Use the color code directly.
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 4.0,
@@ -53,7 +47,8 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
+            Navigator.pushReplacement(
+              // Use pushReplacement to avoid stacking pages.
               context,
               MaterialPageRoute(
                 builder: (context) => const LoginScreen(),
@@ -63,7 +58,6 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
         ),
         actions: <Widget>[
           IconButton(
-            // Add this IconButton for Notifications
             icon: const Icon(Icons.notifications),
             onPressed: () {
               Navigator.push(
@@ -108,8 +102,8 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
             label: 'Category',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.picture_in_picture_alt_outlined),
-            label: 'Bookings',
+            icon: Icon(Icons.follow_the_signs),
+            label: 'Following',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
