@@ -1,7 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors
 
 import 'package:event_booking_app/modules/user/user_dashboard/components/language_popup.dart';
-import 'package:event_booking_app/modules/user/user_profile/screens/profile_page.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:event_booking_app/utils/font_styles.dart';
 import 'package:flutter/material.dart';
@@ -61,12 +60,7 @@ class _TopContainerState extends State<TopContainer> {
             ),
             const SizedBox(width: 10),
             GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ProfilePage()),
-                );
-              },
+              onTap: () {},
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30.0),
                 child: CachedNetworkImage(

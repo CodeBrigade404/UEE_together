@@ -1,6 +1,6 @@
 import 'package:event_booking_app/main.dart';
-import 'package:event_booking_app/models/language_model/language.dart';
-import 'package:event_booking_app/core/constants/language_constant.dart';
+import 'package:event_booking_app/models/language_model.dart';
+import 'package:event_booking_app/core/constants/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class LanguageDialog {
