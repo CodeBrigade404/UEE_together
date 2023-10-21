@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:event_booking_app/models/discover_model/discover_model.dart';
-import 'package:event_booking_app/modules/user/user_discover/screens/event_details.dart';
+import 'package:event_booking_app/modules/user/user_bookings/screens/payment_gateway.dart';
 import 'package:flutter/material.dart';
 
 class ExploreItem extends StatelessWidget {
@@ -15,13 +15,17 @@ class ExploreItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => EventDetailsScreen(
+        //       item: item,
+        //     ),
+        //   ),
+        // );
         Navigator.push(
           context,
-          MaterialPageRoute(
-            builder: (context) => EventDetailsScreen(
-              item: item,
-            ),
-          ),
+          MaterialPageRoute(builder: (context) => const Payment()),
         );
       },
       child: Container(

@@ -51,6 +51,8 @@ dependencies:
   google_fonts: ^6.1.0
   image_picker: ^1.0.4
   flutter_slidable: ^3.0.0
+  dio: ^5.3.3
+  flutter_stripe: ^9.4.0
 
 dev_dependencies:
   flutter_test:
