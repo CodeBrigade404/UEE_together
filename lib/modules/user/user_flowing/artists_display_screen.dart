@@ -2,6 +2,7 @@
 
 import 'package:event_booking_app/data/following_artist_data.dart';
 import 'package:event_booking_app/models/following_model.dart';
+import 'package:event_booking_app/shared/appbars/default_appbar.dart';
 import 'package:flutter/material.dart';
 
 class FollowingPage extends StatefulWidget {
@@ -18,6 +19,9 @@ class _FollowingPageState extends State<FollowingPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(
+        title: 'ꜰᴏʟʟᴏᴡɪɴɢꜱ',
+      ),
       body: Container(
           padding: const EdgeInsets.only(right: 20, left: 20),
           color: Colors.white,

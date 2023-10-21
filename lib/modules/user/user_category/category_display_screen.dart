@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:event_booking_app/data/event_data.dart';
+import 'package:event_booking_app/shared/appbars/default_appbar.dart';
 import 'package:flutter/material.dart';
 
 class CategoryDisplayScreen extends StatefulWidget {
@@ -13,6 +14,9 @@ class _CategoryDisplayScreenState extends State<CategoryDisplayScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(
+        title: 'ᴄᴀᴛᴇɢᴏʀɪᴇꜱ',
+      ),
       body: Container(
         padding: const EdgeInsets.all(16),
         child: ListView.builder(
@@ -39,25 +43,32 @@ class _CategoryDisplayScreenState extends State<CategoryDisplayScreen> {
                         Text(
                           eventCategory.description,
                           textAlign: TextAlign.left,
-                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                                color: Colors.grey,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.titleSmall?.copyWith(
+                                    color: Colors.grey,
+                                  ),
                         ),
                       ],
                     ),
                   ),
-                  subtitle: Container(
+                  subtitle: CachedNetworkImage(
+                    imageUrl: eventCategories[index].eventThumbnailImage,
+                    placeholder: (context, url) => const Icon(Icons
+                        .error), 
+                    errorWidget: (context, url, error) => const Icon(
+                        Icons.error), // Show an error icon if there's an error.
+                    imageBuilder: (context, imageProvider) => Container(
                       width: MediaQuery.of(context).size.width * 0.80,
                       height: 170,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: CachedNetworkImageProvider(
-                            eventCategories[index].eventThumbnailImage,
-                          ),
+                          image: imageProvider,
                           fit: BoxFit.cover,
                         ),
                         borderRadius: BorderRadius.circular(20.0),
-                      ))),
+                      ),
+                    ),
+                  )),
             );
           },
         ),
@@ -65,62 +76,3 @@ class _CategoryDisplayScreenState extends State<CategoryDisplayScreen> {
     );
   }
 }
-
-
-
-// class CategoryDisplayScreen extends StatefulWidget {
-//   const CategoryDisplayScreen({super.key});
-
-//   @override
-//   State<CategoryDisplayScreen> createState() => _CategoryDisplayScreenState();
-// }
-
-// class _CategoryDisplayScreenState extends State<CategoryDisplayScreen> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return SingleChildScrollView(
-//       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-//       child: ListView(
-//         children: List.generate(eventCategories.length, (index) {
-//           return Card(
-//             elevation: 4.0,
-//             margin: const EdgeInsets.only(
-//               bottom: 10.0,
-//               left: 10.0,
-//               right: 10.0,
-//             ),
-//             child: Container(
-//               width: MediaQuery.of(context).size.width * 0.80,
-//               height: 170,
-//               decoration: BoxDecoration(
-//                 image: DecorationImage(
-//                   image: CachedNetworkImageProvider(
-//                     eventCategories[index].eventThumbnailImage,
-//                   ),
-//                   fit: BoxFit.cover,
-//                 ),
-//                 borderRadius: BorderRadius.circular(20.0),
-//               ),
-//               child: Stack(
-//                 children: [
-//                   Positioned(
-//                     top: 10, // Adjust the top position as needed
-//                     left: 10, // Adjust the left position as needed
-//                     child: Text(
-//                       eventCategories[index].eventCategoryName,
-//                       style: const TextStyle(
-//                         color: Colors.white,
-//                         fontSize: 20,
-//                         fontWeight: FontWeight.bold,
-//                       ),
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           );
-//         }),
-//       ),
-//     );
-//   }
-// }

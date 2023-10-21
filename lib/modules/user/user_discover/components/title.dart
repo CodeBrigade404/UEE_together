@@ -1,4 +1,3 @@
-import 'package:event_booking_app/core/constants/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class DiscoverTitle extends StatelessWidget {
@@ -7,8 +6,6 @@ class DiscoverTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentLocale = Localizations.localeOf(context);
-    final isSinhala = currentLocale.languageCode == SINHALA;
     return Padding(
       padding: const EdgeInsets.only(
         left: 20,
@@ -17,9 +14,10 @@ class DiscoverTitle extends StatelessWidget {
       ),
       child: Text(
         title,
-        style: TextStyle(
-          fontSize: isSinhala ? 16 : 23,
-          fontWeight: FontWeight.w500,
+        textAlign: TextAlign.left,
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
           color: Colors.black87,
         ),
       ),
