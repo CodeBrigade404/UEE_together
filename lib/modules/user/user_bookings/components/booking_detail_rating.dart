@@ -1,5 +1,5 @@
-import 'package:event_booking_app/shared/widgets/button.dart';
-import 'package:event_booking_app/shared/widgets/card.dart';
+import 'package:event_booking_app/shared/buttons/button.dart';
+import 'package:event_booking_app/shared/cards/card.dart';
 import 'package:flutter/material.dart';
 
 class RatingReviewsWidget extends StatelessWidget {

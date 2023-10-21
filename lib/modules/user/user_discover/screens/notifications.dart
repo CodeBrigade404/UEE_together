@@ -1,5 +1,5 @@
 import 'package:event_booking_app/core/constants/assets_constants.dart';
-import 'package:event_booking_app/shared/widgets/card.dart';
+import 'package:event_booking_app/shared/cards/card.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsScreen extends StatefulWidget {
