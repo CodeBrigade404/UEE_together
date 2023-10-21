@@ -1,6 +1,6 @@
-import 'package:event_booking_app/core/assets.dart';
-import 'package:event_booking_app/core/widgets/button.dart';
-import 'package:event_booking_app/core/widgets/card.dart';
+import 'package:event_booking_app/core/constants/assets_constants.dart';
+import 'package:event_booking_app/shared/widgets/button.dart';
+import 'package:event_booking_app/shared/widgets/card.dart';
 import 'package:flutter/material.dart';
 
 class InviteFriendsCard extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:event_booking_app/core/assets.dart';
+import 'package:event_booking_app/core/constants/assets_constants.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_detail_rating.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_detail_going_friend.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_detail_invite_friend.dart';

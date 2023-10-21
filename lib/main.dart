@@ -1,5 +1,5 @@
 import 'package:event_booking_app/Firebase/firebase_options.dart';
-import 'package:event_booking_app/core/constants/language_constant.dart';
+import 'package:event_booking_app/core/constants/language_constants.dart';
 import 'package:event_booking_app/modules/user/user_dashboard/screen/user_dashboard.dart';
 import 'package:event_booking_app/modules/welcome/screen/splash_screen.dart';
 import 'package:event_booking_app/utils/strings.dart';

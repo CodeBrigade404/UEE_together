@@ -1,4 +1,4 @@
-import 'package:event_booking_app/core/widgets/card.dart';
+import 'package:event_booking_app/shared/widgets/card.dart';
 import 'package:flutter/material.dart';
 
 class SummaryWidget extends StatefulWidget {

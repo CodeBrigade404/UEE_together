@@ -1,4 +1,4 @@
-import 'package:event_booking_app/core/constants/language_constant.dart';
+import 'package:event_booking_app/core/constants/language_constants.dart';
 import 'package:flutter/material.dart';
 
 class DiscoverTitle extends StatelessWidget {

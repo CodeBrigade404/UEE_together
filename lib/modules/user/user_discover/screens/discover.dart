@@ -1,4 +1,4 @@
-import 'package:event_booking_app/core/constants/language_constant.dart';
+import 'package:event_booking_app/core/constants/language_constants.dart';
 import 'package:event_booking_app/models/discover_model/discover_model.dart';
 import 'package:event_booking_app/modules/user/user_discover/components/explore_title.dart';
 import 'package:event_booking_app/modules/user/user_discover/components/popular.dart';
