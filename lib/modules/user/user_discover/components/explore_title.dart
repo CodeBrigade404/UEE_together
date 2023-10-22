@@ -42,7 +42,7 @@ class ExploreItem extends StatelessWidget {
               //   )
               // ],
               contentMarginTop: 240,
-              title: Text(item.eventName, style: TextStyle(color: appGreyColor)),
+              title: Text(item.eventName, style: const TextStyle(color: appGreyColor)),
               description: Text(
                 item.description,
                 style: const TextStyle(color: appGreyColor,fontSize: 10),

@@ -67,7 +67,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               },
             ),
           PopupMenuButton<String>(
-            color: appDarkGray,
+            icon: const Icon(
+              Icons.more_vert, // Change the icon to the three-dot icon
+              color: appDarkGray, // Set the icon color to dark gray
+            ),
+            color:
+                Colors.white, // Set the background color of the menu to white
             onSelected: (value) async {
               if (value == 'notification') {
                 Navigator.of(context).push(MaterialPageRoute(

@@ -1,4 +1,8 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
+import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DiscoverTitle extends StatelessWidget {
   const DiscoverTitle({Key? key, required this.title}) : super(key: key);
@@ -15,10 +19,10 @@ class DiscoverTitle extends StatelessWidget {
       child: Text(
         title,
         textAlign: TextAlign.left,
-        style: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
-          color: Colors.black87,
+         style: GoogleFonts.poppins(
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+          color: appDarkGray,
         ),
       ),
     );

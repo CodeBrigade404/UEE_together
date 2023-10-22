@@ -20,7 +20,7 @@ class _FollowingPageState extends State<FollowingPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: 'ꜰᴏʟʟᴏᴡɪɴɢꜱ',
+        title: 'My Followings',
       ),
       body: Container(
           padding: const EdgeInsets.only(right: 20, left: 20),

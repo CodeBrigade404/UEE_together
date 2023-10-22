@@ -2,9 +2,12 @@ import 'dart:io';
 
 import 'package:event_booking_app/core/constants/language_constants.dart';
 import 'package:event_booking_app/data/discover_data.dart';
+import 'package:event_booking_app/modules/user/user_dashboard/components/event_list_view.dart';
+import 'package:event_booking_app/modules/user/user_dashboard/screen/events_display_screen.dart';
+import 'package:event_booking_app/modules/user/user_dashboard/screen/home_screen.dart';
 import 'package:event_booking_app/modules/user/user_discover/components/explore_title.dart';
 import 'package:event_booking_app/modules/user/user_discover/components/popular.dart';
-import 'package:event_booking_app/modules/user/user_discover/components/title.dart';
+import 'package:event_booking_app/modules/user/user_discover/components/discover_title.dart';
 import 'package:event_booking_app/shared/appbars/default_appbar.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +20,20 @@ class DiscoverScreen extends StatefulWidget {
   State<DiscoverScreen> createState() => _DiscoverScreenState();
 }
 
-class _DiscoverScreenState extends State<DiscoverScreen> {
+class _DiscoverScreenState extends State<DiscoverScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController tabController;
   @override
   void initState() {
     loadAd();
+    tabController = TabController(length: 2, vsync: this, initialIndex: 0);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    tabController.dispose();
   }
 
   BannerAd? _bannerAd;
@@ -60,14 +72,13 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
         showSearch: true,
         title: "Together",
       ),
-      body: SingleChildScrollView(
+      body: CustomScrollView(
         physics: const BouncingScrollPhysics(
           parent: AlwaysScrollableScrollPhysics(),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _isLoaded
+        slivers: [
+          SliverToBoxAdapter(
+            child: _isLoaded
                 ? Center(
                     child: Container(
                       width: _bannerAd!.size.width.toDouble(),
@@ -77,9 +88,14 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     ),
                   )
                 : const SizedBox(),
-            DiscoverTitle(
-                title: translation(context).discoverUpComing.toUpperCase()),
-            SizedBox(
+          ),
+          SliverToBoxAdapter(
+            child: DiscoverTitle(
+              title: translation(context).discoverUpComing.toUpperCase(),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
               height: 300,
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -92,12 +108,25 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                 ],
               ),
             ),
-            DiscoverTitle(
-                title: translation(context).discoverNearYou.toUpperCase()),
-            for (var item in discoverEventImages)
-              PopularNearYouWidget(item: item),
-          ],
-        ),
+          ),
+          SliverToBoxAdapter(
+            child: DiscoverTitle(
+              title: translation(context).discoverNearYou.toUpperCase(),
+            ),
+          ),
+          SliverFillRemaining(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TabBarView(
+                controller: tabController,
+                children: const [
+                  EventDisplayWidget(),
+                  EventDisplayWidget(),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

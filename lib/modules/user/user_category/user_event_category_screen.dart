@@ -15,7 +15,7 @@ class _CategoryDisplayScreenState extends State<CategoryDisplayScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: 'ᴄᴀᴛᴇɢᴏʀɪᴇꜱ',
+        title: 'Categories',
       ),
       body: Container(
         padding: const EdgeInsets.all(16),
@@ -53,8 +53,7 @@ class _CategoryDisplayScreenState extends State<CategoryDisplayScreen> {
                   ),
                   subtitle: CachedNetworkImage(
                     imageUrl: eventCategories[index].eventThumbnailImage,
-                    placeholder: (context, url) => const Icon(Icons
-                        .error), 
+                    placeholder: (context, url) => const Icon(Icons.error),
                     errorWidget: (context, url, error) => const Icon(
                         Icons.error), // Show an error icon if there's an error.
                     imageBuilder: (context, imageProvider) => Container(
