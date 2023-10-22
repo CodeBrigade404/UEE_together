@@ -14,11 +14,10 @@ final discoverEventImages = <Discover>[
     eventDate: '2023-10-21',
     eventTime: '19:00',
     eventVenue: 'MUSAEUS COLLEGE AUDITORIUM,COLOMBO',
-    eventDescription: 'A Musical Evening for 100 HeatBeats',
+    eventDescription: 'A Musical Evening for 100 HeatBeats Colombo Cultural Fest 2023 is a celebration of Sri Lankan culture and heritage, featuring traditional music, dance, and delicious local cuisine,Colombo Cultural Fest 2023 is a celebration of Sri Lankan culture and heritage, featuring traditional music, dance, and delicious local cuisine',
     artistLineup: [
       CarouselItem(
-        imageUrl:
-            'data:image/jpeg;base64,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',
+        imageUrl: "https://senakabatagoda.lk/assets/img/senakaImg01.webp",
         name: 'ROOKANTHA',
       ),
       CarouselItem(
@@ -218,39 +217,43 @@ final discoverEventImages = <Discover>[
 final discoverUpComingEventImages = <Discover>[
   Discover(
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004413.jpg",
-    title: 'Colombo Groove Fest',
-    description: 'Get ready to groove to the best live music in Colombo!',
+    title: 'Hardanurawa',
+    description: 'A Musical Evening for 100 HeatBeats',
     tax: 15,
-    type: 'Music Concert',
+    type: 'Music Festival',
     distance: 2.5,
-    date: "2023-11-8",
-    location: 'Colombo, Sri Lanka',
-    eventName: 'Colombo Groove Fest',
-    eventDate: '2023-11-15',
-    eventTime: '18:30',
-    eventVenue: 'Colombo Arena',
-    eventDescription: 'Dance the night away to live music!',
+    date: "2023-10-21",
+    location: 'MUSAEUS COLLEGE AUDITORIUM,COLOMBO',
+    eventName: 'Hardanurawa',
+    eventDate: '2023-10-21',
+    eventTime: '19:00',
+    eventVenue: 'MUSAEUS COLLEGE AUDITORIUM,COLOMBO',
+    eventDescription: 'A Musical Evening for 100 HeatBeats',
     artistLineup: [
       CarouselItem(
-        imageUrl: 'Artist1ImageURL',
-        name: 'Artist 1',
+        imageUrl:
+            "https://i.scdn.co/image/ab6761610000e5eb81936b721481db8287564ef1",
+        name: 'ROOKANTHA',
       ),
       CarouselItem(
-        imageUrl: 'Artist2ImageURL',
-        name: 'Artist 2',
+        imageUrl: 'https://senakabatagoda.lk/assets/img/senakaImg01.webp',
+        name: 'SENAKA',
       ),
       CarouselItem(
-        imageUrl: 'Artist3ImageURL',
-        name: 'Artist 3',
+        imageUrl:
+            'https://viberatecdn.blob.core.windows.net/entity/artist/raini-charuka-goonatillake-ZwyJa',
+        name: 'RAINI',
       ),
     ],
     carouselItems: [
       CarouselItem(
-        imageUrl: 'CarouselImage1URL',
+        imageUrl:
+            'https://mytickets.lk/contents/events/poster/hardanurawaya%20event.jpg',
         name: 'Image 1',
       ),
       CarouselItem(
-        imageUrl: 'CarouselImage2URL',
+        imageUrl:
+            'https://senakabatagoda.lk/upcoming_events/Hardanurawa_650d2d0e76e24.jpeg',
         name: 'Image 2',
       ),
     ],

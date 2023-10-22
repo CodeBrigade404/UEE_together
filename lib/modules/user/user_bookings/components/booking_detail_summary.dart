@@ -3,10 +3,22 @@ import 'package:flutter/material.dart';
 
 class SummaryWidget extends StatefulWidget {
   final String eventName;
+  final int tax;
+  final String type;
+  final double distance;
+  final String date;
+  final String eventTime;
+  final String eventVenue;
 
   const SummaryWidget({
     Key? key,
     required this.eventName,
+    required this.tax,
+    required this.type,
+    required this.distance,
+    required this.date,
+    required this.eventTime,
+    required this.eventVenue,
   }) : super(key: key);
 
   @override
@@ -35,18 +47,38 @@ class _SummaryWidgetState extends State<SummaryWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      widget.eventName, 
+                      widget.eventName,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const Text('Dance class for 2'),
+                    Text(
+                      'LKR ${widget.tax} .00',
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
                     const SizedBox(height: 5),
-                    const Text(
-                      'Wednesday, 03/24/2022 · 05:00 PM',
-                      style: TextStyle(
+                    Text(
+                      '${widget.date} |    ${widget.eventTime} PM |    ${widget.distance} miles',
+                      style: const TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      'Event Type: ${widget.type}',
+                      style: const TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      'Venue: ${widget.eventVenue}',
+                      style: const TextStyle(
                         color: Colors.grey,
                       ),
                     ),

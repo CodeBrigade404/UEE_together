@@ -1,8 +1,6 @@
 import 'package:event_booking_app/core/constants/assets_constants.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_detail_rating.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_detail_going_friend.dart';
-import 'package:event_booking_app/modules/user/user_bookings/components/booking_detail_invite_friend.dart';
-import 'package:event_booking_app/modules/user/user_bookings/components/booking_detail_summary.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_image_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -62,12 +60,11 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
                   style: TextStyle(color: Colors.grey),
                 ),
               ),
-              SummaryWidget(
-                eventName: widget.eventName ??"",
-              ),
+              // SummaryWidget(
+              //   eventName: widget.eventName ??"",
+              // ),
               const GoingFriendsWidget(),
               const RatingReviewsWidget(),
-              const InviteFriendsCard(),
             ],
           ),
         ),

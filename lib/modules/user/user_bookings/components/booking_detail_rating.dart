@@ -14,8 +14,8 @@ class RatingReviewsWidget extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Colors.blue[100],
-              borderRadius: const BorderRadius.all(
+              color: Colors.yellow.shade100,
+              borderRadius: BorderRadius.all(
                 Radius.circular(10),
               ),
             ),
@@ -26,12 +26,12 @@ class RatingReviewsWidget extends StatelessWidget {
                   '4.8',
                   style: TextStyle(
                     fontSize: 28,
-                    color: Colors.blue,
+                    color: Color.fromARGB(255, 255, 230, 0),
                   ),
                 ),
                 Icon(
                   Icons.star_rounded,
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 255, 230, 0),
                 ),
               ],
             ),

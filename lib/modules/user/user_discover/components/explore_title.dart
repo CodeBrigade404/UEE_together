@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:event_booking_app/models/discover_model.dart';
-import 'package:event_booking_app/modules/user/user_bookings/screens/payment_gateway.dart';
+import 'package:event_booking_app/modules/user/user_ticket_detail/user_ticket_deatil.dart';
 import 'package:flutter/material.dart';
 
 class ExploreItem extends StatelessWidget {
@@ -25,7 +25,10 @@ class ExploreItem extends StatelessWidget {
         // );
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const Payment()),
+          MaterialPageRoute(
+              builder: (context) => SingleEventDetailScreen(
+                    item: item,
+                  )),
         );
       },
       child: Container(

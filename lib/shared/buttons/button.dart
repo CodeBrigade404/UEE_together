@@ -20,7 +20,7 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.grey[300],
+      color: Colors.black12,
       borderRadius: const BorderRadius.all(
         Radius.circular(20),
       ),
@@ -38,6 +38,7 @@ class MyButton extends StatelessWidget {
               Text(
                 label ?? '',
                 style: const TextStyle(
+                  color: Colors.black38,
                   fontWeight: FontWeight.bold,
                 ),
               ),
