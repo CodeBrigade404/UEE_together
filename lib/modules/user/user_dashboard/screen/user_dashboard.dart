@@ -28,7 +28,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
       const DiscoverScreen(),
       const CategoryDisplayScreen(),
       const FollowingPage(),
-      const     HomeScreen(),
+      const BookingsScreen(),
       const ProfileScreen(),
     ];
     super.initState();
