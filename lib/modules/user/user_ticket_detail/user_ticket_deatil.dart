@@ -3,6 +3,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:event_booking_app/models/discover_model.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_detail_summary.dart';
+import 'package:event_booking_app/modules/user/user_bookings/screens/book.dart';
 import 'package:event_booking_app/modules/user/user_ticket_detail/artist_line_up.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -167,7 +168,14 @@ class _SingleEventDetailScreenState extends State<SingleEventDetailScreen> {
                 const SizedBox(width: 20),
                 Expanded(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const EventBookingForm(),
+                        ),
+                      );
+                    },
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(

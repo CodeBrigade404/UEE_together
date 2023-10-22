@@ -15,7 +15,7 @@ class RatingReviewsWidget extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               color: Colors.yellow.shade100,
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(10),
               ),
             ),
