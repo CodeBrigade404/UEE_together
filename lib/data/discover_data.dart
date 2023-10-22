@@ -14,7 +14,8 @@ final discoverEventImages = <Discover>[
     eventDate: '2023-10-21',
     eventTime: '19:00',
     eventVenue: 'MUSAEUS COLLEGE AUDITORIUM,COLOMBO',
-    eventDescription: 'A Musical Evening for 100 HeatBeats Colombo Cultural Fest 2023 is a celebration of Sri Lankan culture and heritage, featuring traditional music, dance, and delicious local cuisine,Colombo Cultural Fest 2023 is a celebration of Sri Lankan culture and heritage, featuring traditional music, dance, and delicious local cuisine',
+    eventLongDescription:
+        'A Musical Evening for 100 HeatBeats Colombo Cultural Fest 2023 is a celebration of Sri Lankan culture and heritage, featuring traditional music, dance, and delicious local cuisine,Colombo Cultural Fest 2023 is a celebration of Sri Lankan culture and heritage, featuring traditional music, dance, and delicious local cuisine',
     artistLineup: [
       CarouselItem(
         imageUrl: "https://senakabatagoda.lk/assets/img/senakaImg01.webp",
@@ -47,7 +48,7 @@ final discoverEventImages = <Discover>[
     imageUrl:
         "https://mytickets.lk/contents/events/poster/Event-Banner%20CB1.jpg",
     title: 'Celebrate the season in Colombo',
-    description: 'Join us for a cultural extravaganza in the heart of Colombo!',
+    description: 'A Musical Evening for 100 HeatBeats',
     tax: 10,
     type: 'Cultural Festival',
     distance: 10,
@@ -57,7 +58,7 @@ final discoverEventImages = <Discover>[
     eventDate: '2023-11-25',
     eventTime: '8:30 PM - 11:00 PM',
     eventVenue: 'Galle Face Green Stage',
-    eventDescription:
+    eventLongDescription:
         'Colombo Cultural Fest 2023 is a celebration of Sri Lankan culture and heritage, featuring traditional music, dance, and delicious local cuisine.',
     artistLineup: [
       CarouselItem(
@@ -102,7 +103,7 @@ final discoverEventImages = <Discover>[
     eventDate: '2023-11-22',
     eventTime: '18:00',
     eventVenue: 'National Youth Center Maharagama',
-    eventDescription: 'Three Nada Live in Concert',
+    eventLongDescription: 'Three Nada Live in Concert',
     artistLineup: [
       CarouselItem(
         imageUrl:
@@ -147,7 +148,7 @@ final discoverEventImages = <Discover>[
     eventDate: '2023-11-8',
     eventTime: '20:00',
     eventVenue: 'Cinnomon LakeSide Outdoor',
-    eventDescription: 'Ada Hamuwemuda Api Vol 2.0',
+    eventLongDescription: 'Ada Hamuwemuda Api Vol 2.0',
     artistLineup: [
       CarouselItem(
         imageUrl: 'https://senakabatagoda.lk/assets/img/senakaImg01.webp',
@@ -186,7 +187,7 @@ final discoverEventImages = <Discover>[
     eventDate: '2023-11-25',
     eventTime: '20:00',
     eventVenue: 'Nelum Pokuna',
-    eventDescription: 'Get lost in the soulful tunes!',
+    eventLongDescription: 'Get lost in the soulful tunes!',
     artistLineup: [
       CarouselItem(
         imageUrl:
@@ -228,7 +229,7 @@ final discoverUpComingEventImages = <Discover>[
     eventDate: '2023-10-21',
     eventTime: '19:00',
     eventVenue: 'MUSAEUS COLLEGE AUDITORIUM,COLOMBO',
-    eventDescription: 'A Musical Evening for 100 HeatBeats',
+    eventLongDescription: 'A Musical Evening for 100 HeatBeats',
     artistLineup: [
       CarouselItem(
         imageUrl:
@@ -271,7 +272,7 @@ final discoverUpComingEventImages = <Discover>[
     eventDate: '2023-11-12',
     eventTime: '19:30',
     eventVenue: 'Pearl Stadium',
-    eventDescription: 'Rock out with legendary rock bands!',
+    eventLongDescription: 'Rock out with legendary rock bands!',
     artistLineup: [
       CarouselItem(
         imageUrl: 'Artist1ImageURL',
@@ -301,8 +302,7 @@ final discoverUpComingEventImages = <Discover>[
     imageUrl:
         "https://lk-aps.bmscdn.com/events/moviecard/inception-23-et00005059-2023-9-4-t-16-31-59.jpg",
     title: 'Sri Lankan Fusion Beats',
-    description:
-        'An evening of fusion music that celebrates Sri Lankan culture.',
+    description: 'A Musical Evening for 100 HeatBeats',
     tax: 30,
     type: 'Music Fusion Concert',
     distance: 2.0,
@@ -312,7 +312,7 @@ final discoverUpComingEventImages = <Discover>[
     eventDate: '2023-11-10',
     eventTime: '20:00',
     eventVenue: 'Fusion Center',
-    eventDescription: 'A fusion of Sri Lankan musical traditions!',
+    eventLongDescription: 'A fusion of Sri Lankan musical traditions!',
     artistLineup: [
       CarouselItem(
         imageUrl: 'Artist1ImageURL',
@@ -341,8 +341,7 @@ final discoverUpComingEventImages = <Discover>[
   Discover(
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004740.jpg",
     title: 'Lanka Rhythm Carnival',
-    description:
-        'Experience the rhythm and dance of Sri Lanka like never before!',
+    description: 'A Musical Evening for 100 HeatBeats',
     tax: 20,
     type: 'Dance and Music Concert',
     distance: 2.2,
@@ -352,7 +351,7 @@ final discoverUpComingEventImages = <Discover>[
     eventDate: '2023-11-20',
     eventTime: '16:00',
     eventVenue: 'Rhythm Park',
-    eventDescription: 'Dance to the vibrant rhythms of Sri Lanka!',
+    eventLongDescription: 'Dance to the vibrant rhythms of Sri Lanka!',
     artistLineup: [
       CarouselItem(
         imageUrl: 'Artist1ImageURL',
@@ -381,8 +380,7 @@ final discoverUpComingEventImages = <Discover>[
   Discover(
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004413.jpg",
     title: 'Jazz on the Beach',
-    description:
-        'Enjoy smooth jazz tunes on the beautiful Sri Lankan coastline.',
+    description: 'Enjoy smooth jazz tunes',
     tax: 15,
     type: 'Jazz Concert',
     distance: 0.5,
@@ -392,7 +390,7 @@ final discoverUpComingEventImages = <Discover>[
     eventDate: '2023-11-5',
     eventTime: '17:30',
     eventVenue: 'Beachfront Stage',
-    eventDescription: 'Relax and unwind with seaside jazz melodies!',
+    eventLongDescription: 'Relax and unwind with seaside jazz melodies!',
     artistLineup: [
       CarouselItem(
         imageUrl: 'Artist1ImageURL',

@@ -3,16 +3,20 @@
 import 'package:event_booking_app/Firebase/firebase_authentication.dart';
 import 'package:event_booking_app/modules/auth/sign_in.dart';
 import 'package:event_booking_app/modules/user/user_notification/notifications.dart';
+import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool showBackButton;
+  final bool showSearch;
 
   const CustomAppBar({
     Key? key,
     required this.title,
     this.showBackButton = false,
+    this.showSearch = false,
   }) : super(key: key);
 
   @override
@@ -22,29 +26,29 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.blue, Colors.black],
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-        ),
+        color: Colors.white,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(15),
           bottomRight: Radius.circular(15),
         ),
       ),
       child: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
-          title,
-          style: const TextStyle(color: Colors.white, fontSize: 20),
+          title.toUpperCase(),
+          style: GoogleFonts.poppins(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            color: appDarkGray,
+          ),
         ),
         leading: showBackButton
             ? IconButton(
                 icon: const Icon(
                   Icons.arrow_back,
-                  color: Colors.white,
+                  color: appDarkGray,
                 ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -52,17 +56,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               )
             : null,
         actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
+          if (showSearch) // Conditionally display search icon
+            IconButton(
+              icon: const Icon(
+                Icons.search,
+                color: appDarkGray,
+              ),
+              onPressed: () {
+                // Handle the search action here.
+              },
             ),
-            onPressed: () {
-              // Handle the search action here.
-            },
-          ),
           PopupMenuButton<String>(
-            color: Colors.white,
+            color: appDarkGray,
             onSelected: (value) async {
               if (value == 'notification') {
                 Navigator.of(context).push(MaterialPageRoute(

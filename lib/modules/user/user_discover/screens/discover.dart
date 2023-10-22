@@ -6,6 +6,7 @@ import 'package:event_booking_app/modules/user/user_discover/components/explore_
 import 'package:event_booking_app/modules/user/user_discover/components/popular.dart';
 import 'package:event_booking_app/modules/user/user_discover/components/title.dart';
 import 'package:event_booking_app/shared/appbars/default_appbar.dart';
+import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -54,8 +55,10 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: appTransparent,
       appBar: const CustomAppBar(
-        title: 'ᴛᴏɢᴇᴛʜᴇʀ',
+        showSearch: true,
+        title: "Together",
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(
@@ -74,21 +77,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     ),
                   )
                 : const SizedBox(),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.only(top: 10),
-              decoration: const BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.white,
-                    blurRadius: 5,
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: DiscoverTitle(
-                  title: translation(context).discoverUpComing.toUpperCase()),
-            ),
+            DiscoverTitle(
+                title: translation(context).discoverUpComing.toUpperCase()),
             SizedBox(
               height: 300,
               child: ListView(

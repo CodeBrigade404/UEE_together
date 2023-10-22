@@ -120,7 +120,7 @@ class _SingleEventDetailScreenState extends State<SingleEventDetailScreen> {
                               ),
                             ),
                             Text(
-                              ' ${item.eventDescription}', // Display event description
+                              ' ${item.eventLongDescription}', // Display event description
                               style: GoogleFonts.poppins(
                                 fontSize: 12,
                                 color: Colors.grey,

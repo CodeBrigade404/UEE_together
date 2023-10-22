@@ -69,7 +69,7 @@ class _EventDetailsScreenState extends State<EventDetailsScreen> {
                       Text('Event Date: ${item.eventDate}'),
                       Text('Event Time: ${item.eventTime}'),
                       Text('Event Venue: ${item.eventVenue}'),
-                      Text('Event Description: ${item.eventDescription}'),
+                      Text('Event Description: ${item.eventLongDescription}'),
                       const SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {
