@@ -350,9 +350,12 @@ class _AddEventScreenState extends State<AddEventScreen> {
                     color: Color(0xFF888888),
                   ),
                 ),
-                prefixIcon: const Icon(
-                  Icons.description,
-                  color: Color(0xFF888888),
+                prefixIcon: const Padding(
+                  padding: EdgeInsetsDirectional.only(bottom: 60),
+                  child: Icon(
+                    Icons.description,
+                    color: Color(0xFF888888),
+                  ),
                 ),
               ),
               keyboardType: TextInputType.text,

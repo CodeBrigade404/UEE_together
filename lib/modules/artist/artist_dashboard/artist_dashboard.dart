@@ -1,4 +1,3 @@
-import 'package:event_booking_app/modules/artist/artist_add_post/artist_add_post.dart';
 import 'package:event_booking_app/modules/artist/artist_post/artist_post.dart';
 import 'package:event_booking_app/modules/artist/artist_profile/artist_profile.dart';
 import 'package:flutter/material.dart';
@@ -24,19 +23,91 @@ class _ArtistHomeScreenState extends State<ArtistHomeScreen> {
   @override
   Widget build(BuildContext context) {
     String title = "Home";
-    Widget content = Center(
-      child: Text(widget.uid),
+    Widget content = SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 450,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(40),
+                bottomRight: Radius.circular(40),
+              ),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                  "https://res.cloudinary.com/dnoobzfxo/image/upload/v1698324695/dj-pictures-e9mzrm1wwy8nryju_xh24k7.jpg",
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                Text("Increase your fan base and carreer growth",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                      fontSize: 24,
+                      color: const Color(0xFF3D56F0),
+                      fontWeight: FontWeight.w700,
+                    )),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Easy to use and easy to manage promotion start from \$20 to \$100",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(
+                    fontSize: 14,
+                    color: Colors.grey[600],
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF3D56F0),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 40,
+                      vertical: 15,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    "Get Started",
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
     if (_selectedIndex == 0) {
-      content = ArtistProfile();
+      content = ArtistProfile(uid: widget.uid);
       title = "Profile";
     }
+
     if (_selectedIndex == 2) {
-      content = const ArtistAddPost();
-      title = "Add Posts";
-    }
-    if (_selectedIndex == 3) {
-      content = const ArtistPost();
+      content = ArtistPost(uid: widget.uid);
       title = "My Posts";
     }
     return Scaffold(
@@ -66,12 +137,8 @@ class _ArtistHomeScreenState extends State<ArtistHomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.person_2), label: "Profile"),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.post_add_rounded),
-            label: "My Posts",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: "My Posts",
+            icon: Icon(Icons.post_add),
+            label: "Posts",
           ),
         ],
         currentIndex: _selectedIndex,
