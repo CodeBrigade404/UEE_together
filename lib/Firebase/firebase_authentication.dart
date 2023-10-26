@@ -125,5 +125,7 @@ Future<void> signIn(
 
 Future<void> logout() async {
   final GoogleSignIn googleSignIn = GoogleSignIn();
+  FirebaseAuth auth = FirebaseAuth.instance;
   await googleSignIn.signOut();
+  await auth.signOut();
 }

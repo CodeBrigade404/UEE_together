@@ -1,7 +1,7 @@
 import 'package:event_booking_app/Firebase/firebase_authentication.dart';
 import 'package:event_booking_app/modules/auth/sign_up.dart';
 import 'package:event_booking_app/modules/auth/auth_providers.dart';
-import 'package:event_booking_app/shared/components/buttons/default_button.dart';
+import 'package:event_booking_app/shared/buttons/default_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {

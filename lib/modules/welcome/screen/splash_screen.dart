@@ -102,10 +102,8 @@ class _IntroScreenState extends State<IntroScreen> {
                 //   }
                 // },
                 onPressed: () {
-                  if (mounted) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const LoginScreen()));
-                  }
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => const LoginScreen()));
                 },
                 child: const Text(
                   AppStrings.introContinueButtonText,
