@@ -17,7 +17,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: 'ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴꜱ',
+        title: 'Notifications',
         showBackButton: true,
       ),
       body: SingleChildScrollView(

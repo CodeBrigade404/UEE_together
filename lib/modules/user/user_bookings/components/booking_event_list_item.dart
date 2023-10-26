@@ -1,4 +1,5 @@
 import 'package:event_booking_app/modules/user/user_bookings/screens/booking_details.dart';
+import 'package:event_booking_app/shared/cards/card.dart';
 import 'package:flutter/material.dart';
 
 class EventListItem extends StatelessWidget {
@@ -22,58 +23,76 @@ class EventListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => BookingDetailsScreen(
-              time: time,
-              eventName: eventName,
-              venueName: venueName,
-              date: date,
-              bookingId: bookingId,
-              images: images,
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BookingDetailsScreen(
+                time: time,
+                eventName: eventName,
+                venueName: venueName,
+                date: date,
+                bookingId: bookingId,
+                images: images,
+              ),
             ),
-          ),
-        );
-      },
-      child: Row(
-        children: [
-          SizedBox(
-            width: 80,
-            child: Text(time),
-          ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(10),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
+          child: MyCard(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: const Icon(Icons.movie_filter),
+                title: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Text(eventName!),
                 ),
-              ),
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        eventName??"",
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      Text(
-                        venueName,
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
-                    ],
-                  ),
-                ],
+                subtitle: Text(venueName),
+                trailing: const Icon(Icons.arrow_forward_ios_rounded),
               ),
             ),
           ),
-        ],
-      ),
-    );
+        )
+        // child: Row(
+        //   children: [
+        //     SizedBox(
+        //       width: 80,
+        //       child: Text(time),
+        //     ),
+        //     Expanded(
+        //       child: Container(
+        //         decoration: BoxDecoration(
+        //           color: Colors.grey[200],
+        //           borderRadius: const BorderRadius.all(
+        //             Radius.circular(10),
+        //           ),
+        //         ),
+        //         padding: const EdgeInsets.all(10),
+        //         child: Row(
+        //           crossAxisAlignment: CrossAxisAlignment.start,
+        //           children: [
+        //             Column(
+        //               crossAxisAlignment: CrossAxisAlignment.start,
+        //               children: [
+        //                 Text(
+        //                   eventName??"",
+        //                   style: Theme.of(context).textTheme.titleMedium,
+        //                 ),
+        //                 Text(
+        //                   venueName,
+        //                   style: Theme.of(context).textTheme.titleSmall,
+        //                 ),
+        //               ],
+        //             ),
+        //           ],
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
+
+        );
   }
 }

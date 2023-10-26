@@ -3,10 +3,7 @@ import 'dart:io';
 import 'package:event_booking_app/core/constants/language_constants.dart';
 import 'package:event_booking_app/data/discover_data.dart';
 import 'package:event_booking_app/modules/user/user_dashboard/components/event_list_view.dart';
-import 'package:event_booking_app/modules/user/user_dashboard/screen/events_display_screen.dart';
-import 'package:event_booking_app/modules/user/user_dashboard/screen/home_screen.dart';
 import 'package:event_booking_app/modules/user/user_discover/components/explore_title.dart';
-import 'package:event_booking_app/modules/user/user_discover/components/popular.dart';
 import 'package:event_booking_app/modules/user/user_discover/components/discover_title.dart';
 import 'package:event_booking_app/shared/appbars/default_appbar.dart';
 import 'package:event_booking_app/utils/colors.dart';
@@ -116,7 +113,7 @@ class _DiscoverScreenState extends State<DiscoverScreen>
           ),
           SliverFillRemaining(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 34),
               child: TabBarView(
                 controller: tabController,
                 children: const [

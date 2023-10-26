@@ -29,7 +29,10 @@ class _EventBookingFormState extends State<EventBookingForm>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: "Pay"),
+      appBar: const CustomAppBar(
+        title: "Pay",
+        showBackButton: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

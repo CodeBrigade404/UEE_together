@@ -83,7 +83,7 @@ class _SingleEventDetailScreenState extends State<SingleEventDetailScreen> {
                       padding:
                           const EdgeInsets.only(top: 40, right: 14, left: 14),
                       decoration: const BoxDecoration(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 250, 248, 248),
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(30),
                           topRight: Radius.circular(30),
@@ -110,8 +110,9 @@ class _SingleEventDetailScreenState extends State<SingleEventDetailScreen> {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 15),
                             ArtistCarousel(artistList: item.artistLineup),
+                            const SizedBox(height: 15),
                             Text(
                               'Description',
                               style: GoogleFonts.poppins(

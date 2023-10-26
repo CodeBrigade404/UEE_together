@@ -1,13 +1,15 @@
-class Event {
+class PopularEvent {
   final String eventName;
   final String eventImageUrl;
   final String eventCurrentTicketPrice;
   final bool isLiked;
+  final String eventDiscountPrice;
 
-  const Event({
+  const PopularEvent({
     required this.eventName,
     required this.eventImageUrl,
     required this.eventCurrentTicketPrice,
+     required this.eventDiscountPrice,
     required this.isLiked,
   });
 }

@@ -20,19 +20,19 @@ class _EventDisplayWidgetState extends State<EventDisplayWidget> {
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       crossAxisSpacing: 15,
       crossAxisCount: 2,
-      itemCount: events.length,
+      itemCount: popularNearYouEvents.length,
       mainAxisSpacing: 10,
       itemBuilder: (context, index) {
         return singleItemWidget(
-          events[index],
-          index == events.length - 1 ? true : false,
+          popularNearYouEvents[index],
+          index == popularNearYouEvents.length - 1 ? true : false,
         );
       },
     );
   }
 
   // single item widget
-  Widget singleItemWidget(Event event, bool lastItem) {
+  Widget singleItemWidget(PopularEvent event, bool lastItem) {
     return Column(
       children: [
         Stack(
@@ -80,7 +80,7 @@ class _EventDisplayWidgetState extends State<EventDisplayWidget> {
                         Text("\$${event.eventCurrentTicketPrice}"),
                         const SizedBox(width: 5),
                         Text(
-                          "\$${event.eventCurrentTicketPrice}",
+                          "\$${event.eventDiscountPrice}",
                           style: const TextStyle(
                             color: Colors.grey,
                             decoration: TextDecoration.lineThrough,

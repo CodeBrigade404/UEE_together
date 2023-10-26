@@ -1,4 +1,5 @@
 import 'package:event_booking_app/data/booking_data.dart';
+import 'package:event_booking_app/shared/appbars/default_appbar.dart';
 import 'package:event_booking_app/shared/cards/card.dart';
 import 'package:event_booking_app/models/booking_model.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_event_list_item.dart';
@@ -18,6 +19,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(title: "My Bookings"),
       body: Column(
         children: [
           const SizedBox(height: 10),
@@ -69,22 +71,13 @@ class _BookingsScreenState extends State<BookingsScreen> {
         .toList();
 
     return filteredBookings.map((booking) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
-        child: MyCard(
-          child: Column(
-            children: [
-              EventListItem(
-                  time: booking.time,
-                  eventName: booking.eventName,
-                  venueName: booking.venueName,
-                  date: booking.date,
-                  bookingId: booking.bookingId,
-                  images: booking.images),
-            ],
-          ),
-        ),
-      );
+      return EventListItem(
+          time: booking.time,
+          eventName: booking.eventName,
+          venueName: booking.venueName,
+          date: booking.date,
+          bookingId: booking.bookingId,
+          images: booking.images);
     }).toList();
   }
 }
