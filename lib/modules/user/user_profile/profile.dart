@@ -1,5 +1,6 @@
 import 'package:event_booking_app/core/constants/assets_constants.dart';
-import 'package:event_booking_app/shared/widgets/card.dart';
+import 'package:event_booking_app/shared/appbars/default_appbar.dart';
+import 'package:event_booking_app/shared/cards/card.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -13,9 +14,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 0,
-      ),
+      appBar: const CustomAppBar(title: "Account"),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(
           parent: AlwaysScrollableScrollPhysics(),
@@ -26,20 +25,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const _ProfileDetails(),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 10,
-                  top: 20,
-                  bottom: 20,
-                ),
-                child: Text(
-                  'Account',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black87,
-                  ),
-                ),
-              ),
               ListTile(
                 title: const Text('Account Information'),
                 subtitle: const Text('Change your account information'),
@@ -97,12 +82,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.exit_to_app, 
-                              color: Color.fromARGB(255, 0, 6, 11), 
+                              Icons.exit_to_app,
+                              color: Color.fromARGB(255, 0, 6, 11),
                             ),
-                            SizedBox(
-                                width:
-                                    8), 
+                            SizedBox(width: 8),
                             Text(
                               'Logout',
                               style: TextStyle(

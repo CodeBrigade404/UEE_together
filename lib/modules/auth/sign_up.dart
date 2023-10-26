@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:event_booking_app/Firebase/firebase_authentication.dart';
 import 'package:event_booking_app/modules/auth/sign_in.dart';
-import 'package:event_booking_app/shared/components/buttons/default_button.dart';
+import 'package:event_booking_app/shared/buttons/default_button.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {

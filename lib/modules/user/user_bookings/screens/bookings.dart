@@ -1,5 +1,5 @@
 import 'package:event_booking_app/data/booking_data.dart';
-import 'package:event_booking_app/shared/widgets/card.dart';
+import 'package:event_booking_app/shared/cards/card.dart';
 import 'package:event_booking_app/models/booking_model.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_event_list_item.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_status_button.dart';

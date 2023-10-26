@@ -1,5 +1,8 @@
-import 'package:event_booking_app/core/constants/language_constants.dart';
+// ignore_for_file: prefer_typing_uninitialized_variables
+
+import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DiscoverTitle extends StatelessWidget {
   const DiscoverTitle({Key? key, required this.title}) : super(key: key);
@@ -7,8 +10,6 @@ class DiscoverTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentLocale = Localizations.localeOf(context);
-    final isSinhala = currentLocale.languageCode == SINHALA;
     return Padding(
       padding: const EdgeInsets.only(
         left: 20,
@@ -17,10 +18,11 @@ class DiscoverTitle extends StatelessWidget {
       ),
       child: Text(
         title,
-        style: TextStyle(
-          fontSize: isSinhala ? 16 : 23,
-          fontWeight: FontWeight.w500,
-          color: Colors.black87,
+        textAlign: TextAlign.left,
+         style: GoogleFonts.poppins(
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+          color: appDarkGray,
         ),
       ),
     );

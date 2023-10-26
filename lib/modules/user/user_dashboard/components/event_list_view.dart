@@ -40,7 +40,7 @@ class _EventDisplayWidgetState extends State<EventDisplayWidget> {
             Container(
               padding: const EdgeInsets.only(bottom: 10.0),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(28.0),
+                borderRadius: BorderRadius.circular(10.0),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
@@ -55,7 +55,7 @@ class _EventDisplayWidgetState extends State<EventDisplayWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(28),
+                    borderRadius: BorderRadius.circular(10),
                     child: CachedNetworkImage(
                       imageUrl: event.eventImageUrl,
                       fit: BoxFit.cover,
