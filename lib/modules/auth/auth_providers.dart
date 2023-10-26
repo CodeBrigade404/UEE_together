@@ -1,6 +1,5 @@
 import 'package:event_booking_app/Firebase/firebase_authentication.dart';
 import 'package:event_booking_app/modules/user/user_ctrl.dart';
-import 'package:event_booking_app/modules/user/user_dashboard/screen/user_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
