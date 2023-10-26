@@ -22,58 +22,75 @@ class EventListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => BookingDetailsScreen(
-              time: time,
-              eventName: eventName,
-              venueName: venueName,
-              date: date,
-              bookingId: bookingId,
-              images: images,
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BookingDetailsScreen(
+                time: time,
+                eventName: eventName,
+                venueName: venueName,
+                date: date,
+                bookingId: bookingId,
+                images: images,
+              ),
             ),
-          ),
-        );
-      },
-      child: Row(
-        children: [
-          SizedBox(
-            width: 80,
-            child: Text(time),
-          ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(10),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                ListTile(
+                  leading: const Icon(Icons.movie_filter),
+                  title: Text(eventName!),
+                  subtitle: Text(venueName),
                 ),
-              ),
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        eventName??"",
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      Text(
-                        venueName,
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                const Divider(thickness: 1)
+              ],
             ),
           ),
-        ],
-      ),
-    );
+        )
+        // child: Row(
+        //   children: [
+        //     SizedBox(
+        //       width: 80,
+        //       child: Text(time),
+        //     ),
+        //     Expanded(
+        //       child: Container(
+        //         decoration: BoxDecoration(
+        //           color: Colors.grey[200],
+        //           borderRadius: const BorderRadius.all(
+        //             Radius.circular(10),
+        //           ),
+        //         ),
+        //         padding: const EdgeInsets.all(10),
+        //         child: Row(
+        //           crossAxisAlignment: CrossAxisAlignment.start,
+        //           children: [
+        //             Column(
+        //               crossAxisAlignment: CrossAxisAlignment.start,
+        //               children: [
+        //                 Text(
+        //                   eventName??"",
+        //                   style: Theme.of(context).textTheme.titleMedium,
+        //                 ),
+        //                 Text(
+        //                   venueName,
+        //                   style: Theme.of(context).textTheme.titleSmall,
+        //                 ),
+        //               ],
+        //             ),
+        //           ],
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
+
+        );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:event_booking_app/models/organizer_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:intl/intl.dart';
 
 class OneEvent extends StatelessWidget {
   final OrganizerEvent event;
@@ -92,7 +92,7 @@ class OneEvent extends StatelessWidget {
                                 Text(
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 1,
-                                  event.date,
+                                  "${DateFormat('y-M-d').format(DateTime.parse(event.date))}   ${event.startTime} - ${event.endTime}",
                                   style: GoogleFonts.poppins(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,

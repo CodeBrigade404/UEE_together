@@ -56,7 +56,7 @@ class _ImageListViewState extends State<ImageListView> {
           itemBuilder: (context, index) {
             // return Container();
             return CachedNetworkImage(
-              imageUrl: events[widget.startIndex + index].eventImageUrl,
+              imageUrl: popularNearYouEvents[widget.startIndex + index].eventImageUrl,
               imageBuilder: (context, imageProvider) {
                 return Container(
                   margin: const EdgeInsets.only(
