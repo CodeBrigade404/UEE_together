@@ -98,7 +98,9 @@ class _OrganizerHomepageState extends State<OrganizerHomepage> {
     );
 
     if (_selectedIndex == 0) {
-      activeContent = const AddEventScreen();
+      activeContent = AddEventScreen(
+        onItemMethod: _onItemTapped,
+      );
       title = "Add Event";
     }
     if (_selectedIndex == 2) {

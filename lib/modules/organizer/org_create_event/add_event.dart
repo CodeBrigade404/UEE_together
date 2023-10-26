@@ -1,4 +1,8 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:event_booking_app/models/organizer_model.dart';
+import 'package:event_booking_app/modules/organizer/org_my_events/org_my_events.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -7,7 +11,9 @@ import 'package:intl/intl.dart';
 final formatter = DateFormat.yMd();
 
 class AddEventScreen extends StatefulWidget {
-  const AddEventScreen({Key? key}) : super(key: key);
+  final void Function(int index) onItemMethod;
+  const AddEventScreen({Key? key, required this.onItemMethod})
+      : super(key: key);
 
   @override
   State<AddEventScreen> createState() => _AddEventScreenState();
@@ -17,11 +23,15 @@ class _AddEventScreenState extends State<AddEventScreen> {
   final TextEditingController eventNameController = TextEditingController();
   String eventType = "";
   DateTime? _selectedDate;
+  TimeOfDay? _selectedStartTime;
+  TimeOfDay? _selectedEndTime;
   final TextEditingController locationController = TextEditingController();
   final TextEditingController ticketPriceController = TextEditingController();
   final TextEditingController ticketQuantityController =
       TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
   File? _image;
+  UploadTask? task;
 
   void clickSubmit() {
     final enteredAmount = eventNameController.text.trim();
@@ -31,8 +41,12 @@ class _AddEventScreenState extends State<AddEventScreen> {
     print("location ${locationController.text.trim()}");
     print("price ${ticketPriceController.text.trim()}");
     print("quanitity ${ticketQuantityController.text.trim()}");
-
     print("image $_image");
+    print("start time $_selectedStartTime");
+    print("end time $_selectedEndTime");
+    print("description ${descriptionController.text}");
+    //print image name
+    print("image name ${_image!.path.split('/').last}");
   }
 
   void _presentDatePicker() async {
@@ -50,12 +64,69 @@ class _AddEventScreenState extends State<AddEventScreen> {
     });
   }
 
+  void _presentStartTimePicker() async {
+    final now = TimeOfDay.now();
+    final pickedTime = await showTimePicker(context: context, initialTime: now);
+    if (pickedTime != null) {
+      setState(() {
+        _selectedStartTime = pickedTime;
+      });
+    }
+  }
+
+  void _presentEndTimePicker() async {
+    final now = TimeOfDay.now();
+    final pickedTime = await showTimePicker(context: context, initialTime: now);
+    if (pickedTime != null) {
+      setState(() {
+        _selectedEndTime = pickedTime;
+      });
+    }
+  }
+
   Future _pickImageFromGallery() async {
     final ImagePicker picker = ImagePicker();
     final returnImage = await picker.pickImage(source: ImageSource.gallery);
     setState(() {
       _image = File(returnImage!.path);
     });
+  }
+
+  String formatTime(TimeOfDay time) {
+    final hour = time.hourOfPeriod;
+    final minute = time.minute;
+    final period = time.period == DayPeriod.am ? 'AM' : 'PM';
+    return '${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')} $period';
+  }
+
+  upload() async {
+    final path = "event_image_files/${_image!.path.split('/').last}";
+    final file = File(_image!.path);
+    final ref = FirebaseStorage.instance.ref(path);
+    task = ref.putFile(file);
+
+    final snapshot = await task!.whenComplete(() => {});
+    final url = await snapshot.ref.getDownloadURL();
+    print("Download URL: $url");
+
+    var event = OrganizerEvent(
+      id: "id",
+      title: eventNameController.text.trim(),
+      type: eventType,
+      image: url,
+      description: descriptionController.text.trim(),
+      location: locationController.text.trim(),
+      date: _selectedDate.toString(),
+      price: double.parse(ticketPriceController.text.trim()),
+      quantity: int.parse(ticketQuantityController.text.trim()),
+      startTime: _selectedStartTime != null
+          ? formatTime(_selectedStartTime!)
+          : '', // Provide a default value if _selectedStartTime is null
+      endTime: _selectedEndTime != null ? formatTime(_selectedEndTime!) : '',
+    );
+    FirebaseFirestore.instance.collection("events").add(event.toJson());
+
+    widget.onItemMethod(2);
   }
 
   @override
@@ -178,6 +249,118 @@ class _AddEventScreenState extends State<AddEventScreen> {
             const SizedBox(
               height: 15,
             ),
+            Container(
+              height: 50, // Set the desired height for the Row
+              child: Row(
+                children: [
+                  Flexible(
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        hintText: 'Start Time',
+                        enabled: true,
+                        contentPadding: const EdgeInsets.all(16),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: Color(0xFFE4DFDF),
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: Color(0xFF888888),
+                          ),
+                        ),
+                        prefixIcon: const Icon(
+                          Icons.date_range,
+                          color: Color(0xFF888888),
+                        ),
+                      ),
+                      readOnly: true,
+                      onTap: _presentStartTimePicker,
+                      controller: TextEditingController(
+                        text: _selectedStartTime == null
+                            ? ''
+                            : _selectedStartTime!.format(context),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Flexible(
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        hintText: 'End Time',
+                        enabled: true,
+                        contentPadding: const EdgeInsets.all(16),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: Color(0xFFE4DFDF),
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: Color(0xFF888888),
+                          ),
+                        ),
+                        prefixIcon: const Icon(
+                          Icons.date_range,
+                          color: Color(0xFF888888),
+                        ),
+                      ),
+                      readOnly: true,
+                      onTap: _presentEndTimePicker,
+                      controller: TextEditingController(
+                        text: _selectedEndTime == null
+                            ? ''
+                            : _selectedEndTime!.format(context),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            TextFormField(
+              controller: descriptionController,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                hintText: 'Description',
+                enabled: true,
+                contentPadding: const EdgeInsets.all(16),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: const BorderSide(
+                    color: Color(0xFFE4DFDF),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: const BorderSide(
+                    color: Color(0xFF888888),
+                  ),
+                ),
+                prefixIcon: const Icon(
+                  Icons.description,
+                  color: Color(0xFF888888),
+                ),
+              ),
+              keyboardType: TextInputType.text,
+              maxLines: 4,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
             TextFormField(
               controller: locationController,
               decoration: InputDecoration(
@@ -271,8 +454,9 @@ class _AddEventScreenState extends State<AddEventScreen> {
             _image != null
                 ? Image.file(
                     _image!,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
+                    width: 400,
+                    height: 200,
+                    fit: BoxFit.contain,
                   )
                 : Text(
                     "No image selected",
@@ -305,7 +489,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
               height: 15,
             ),
             ElevatedButton(
-              onPressed: clickSubmit,
+              onPressed: upload,
               style: ElevatedButton.styleFrom(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 13),
@@ -316,9 +500,12 @@ class _AddEventScreenState extends State<AddEventScreen> {
                 ),
               ),
               child: Text(
-                "Save Event",
+                "Upload",
                 style: GoogleFonts.poppins(fontSize: 16),
               ),
+            ),
+            const SizedBox(
+              height: 35,
             ),
           ],
         ),
