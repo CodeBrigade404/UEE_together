@@ -69,6 +69,7 @@ void route(BuildContext context) {
       .get()
       .then((DocumentSnapshot documentSnapshot) {
     if (documentSnapshot.exists) {
+      String uid = user!.uid;
       if (documentSnapshot.get('rool') == "Organizer") {
         Navigator.pushReplacement(
           context,
@@ -80,7 +81,7 @@ void route(BuildContext context) {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const ArtistHomeScreen(),
+            builder: (context) => ArtistHomeScreen(uid: uid),
           ),
         );
       } else {
