@@ -5,7 +5,6 @@ import 'package:event_booking_app/modules/artist/artist_dashboard/artist_dashboa
 import 'package:event_booking_app/modules/auth/sign_in.dart';
 import 'package:event_booking_app/modules/organizer/org_home/homepage.dart';
 import 'package:event_booking_app/modules/user/user_ctrl.dart';
-import 'package:event_booking_app/modules/user/user_dashboard/screen/user_dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

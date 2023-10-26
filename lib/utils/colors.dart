@@ -9,3 +9,5 @@ const appTransparent = Colors.transparent;
 const startPointsValueColor = Color.fromARGB(255, 155, 140, 3);
 const startColor = Color.fromARGB(255, 255, 230, 0);
 const kPrimaryColor = Color.fromARGB(255, 46, 39, 74);
+const appBackground = Color.fromARGB(255, 250, 248, 248);
+const appBackgroundDarker = Color.fromARGB(255, 226, 228, 241);

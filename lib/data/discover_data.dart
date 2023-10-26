@@ -2,6 +2,7 @@ import 'package:event_booking_app/models/discover_model.dart';
 
 final discoverEventImages = <Discover>[
   Discover(
+    ticketId: "TK67012",
     imageUrl: "https://www.newswire.lk/wp-content/uploads/2022/09/Sahan.jpg",
     title: 'Hardanurawa',
     description: 'A Musical Evening for 100 HeatBeats',
@@ -45,6 +46,7 @@ final discoverEventImages = <Discover>[
     ],
   ),
   Discover(
+    ticketId: "TK04512",
     imageUrl:
         "https://mytickets.lk/contents/events/poster/Event-Banner%20CB1.jpg",
     title: 'Celebrate the season in Colombo',
@@ -90,6 +92,7 @@ final discoverEventImages = <Discover>[
     ],
   ),
   Discover(
+    ticketId: "TK324512",
     imageUrl:
         "https://mytickets.lk/contents/events/poster/THREE%20NADA%20EVENT%20BANNER.jpg",
     title: 'Three Nada',
@@ -135,6 +138,7 @@ final discoverEventImages = <Discover>[
     ],
   ),
   Discover(
+    ticketId: "TK0134512",
     imageUrl:
         "https://mytickets.lk/contents/events/poster/ada%20hamu%20wemuda%20new%20EVENT%20VOL%2002.jpg",
     title: 'Ada Hamuwemuda Api Vol 2.0',
@@ -174,6 +178,7 @@ final discoverEventImages = <Discover>[
     ],
   ),
   Discover(
+    ticketId: "TK04512",
     imageUrl:
         "https://archives1.dinamina.lk/sites/default/files/news/2020/12/29/Lalitha%20Sirisara.jpg",
     title: 'Lalitha Sira Sara',
@@ -217,10 +222,11 @@ final discoverEventImages = <Discover>[
 
 final discoverUpComingEventImages = <Discover>[
   Discover(
+    ticketId: "TK0012",
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004413.jpg",
     title: 'Hardanurawa',
     description: 'A Musical Evening for 100 HeatBeats',
-    tax: 15,
+    tax: 2000,
     type: 'Music Festival',
     distance: 2.5,
     date: "2023-10-21",
@@ -260,10 +266,11 @@ final discoverUpComingEventImages = <Discover>[
     ],
   ),
   Discover(
+    ticketId: "TK57012",
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004821.jpg",
     title: 'Rock the Pearl Stadium',
     description: 'A rock concert that will blow your mind!',
-    tax: 45,
+    tax: 2000,
     type: 'Rock Concert',
     distance: 1.5,
     date: "2023-11-8",
@@ -299,11 +306,12 @@ final discoverUpComingEventImages = <Discover>[
     ],
   ),
   Discover(
+    ticketId: "TK970121",
     imageUrl:
         "https://lk-aps.bmscdn.com/events/moviecard/inception-23-et00005059-2023-9-4-t-16-31-59.jpg",
     title: 'Sri Lankan Fusion Beats',
     description: 'A Musical Evening for 100 HeatBeats',
-    tax: 30,
+    tax: 2000,
     type: 'Music Fusion Concert',
     distance: 2.0,
     date: "2023-11-8",
@@ -339,10 +347,11 @@ final discoverUpComingEventImages = <Discover>[
     ],
   ),
   Discover(
+    ticketId: "TK0234",
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004740.jpg",
     title: 'Lanka Rhythm Carnival',
     description: 'A Musical Evening for 100 HeatBeats',
-    tax: 20,
+    tax: 2500,
     type: 'Dance and Music Concert',
     distance: 2.2,
     date: "2023-11-8",
@@ -378,10 +387,11 @@ final discoverUpComingEventImages = <Discover>[
     ],
   ),
   Discover(
+    ticketId: "TK13012",
     imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004413.jpg",
     title: 'Jazz on the Beach',
     description: 'Enjoy smooth jazz tunes',
-    tax: 15,
+    tax: 2500,
     type: 'Jazz Concert',
     distance: 0.5,
     date: "2023-11-8",

@@ -9,6 +9,7 @@ class CarouselItem {
 }
 
 class Discover {
+  final String ticketId;
   final String imageUrl;
   final String title;
   final String description;
@@ -25,6 +26,7 @@ class Discover {
   final List<CarouselItem> artistLineup;
   final List<CarouselItem> carouselItems;
   Discover({
+    required this.ticketId,
     required this.imageUrl,
     required this.title,
     required this.description,
@@ -42,4 +44,3 @@ class Discover {
     required this.carouselItems,
   });
 }
-

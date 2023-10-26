@@ -1,6 +1,7 @@
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, must_be_immutable
 
 import 'package:dio/dio.dart';
+import 'package:event_booking_app/models/discover_model.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_payment_behavior.dart';
 import 'package:event_booking_app/modules/user/user_bookings/screens/qr_gen.dart';
 import 'package:event_booking_app/shared/appbars/default_appbar.dart';
@@ -10,7 +11,8 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class EventBookingForm extends StatefulWidget {
-  const EventBookingForm({super.key});
+  Discover item;
+  EventBookingForm({super.key, required this.item});
 
   @override
   State<EventBookingForm> createState() => _EventBookingFormState();
@@ -176,7 +178,7 @@ class _EventBookingFormState extends State<EventBookingForm>
                           onPressed: () {
                             if (_formKey.currentState!.validate() &&
                                 _isAgreedToPolicy) {
-                              createPaymentIntent();
+                              createPaymentIntent(widget.item.tax.toString());
                             }
                           },
                           buttonText: 'Pay',
@@ -193,7 +195,7 @@ class _EventBookingFormState extends State<EventBookingForm>
     );
   }
 
-  void createPaymentIntent() async {
+  void createPaymentIntent(String amount) async {
     setState(() {
       isProcessing = true;
     });
@@ -201,7 +203,7 @@ class _EventBookingFormState extends State<EventBookingForm>
       Response response = await dio.post(
           'https://api.stripe.com/v1/payment_intents',
           data: {
-            'amount': '5000',
+            'amount': amount,
             'currency': 'USD',
             'payment_method_types[]': 'card'
           },
@@ -250,7 +252,7 @@ class _EventBookingFormState extends State<EventBookingForm>
             .showSnackBar(const SnackBar(content: Text("paid successfully")));
         PersistentNavBarNavigator.pushNewScreen(
           context,
-          screen: const GenerateQrCodePage(),
+          screen: GenerateQrCodePage(item: widget.item , count: int.parse(ticketsController.text)),
           withNavBar: false,
           pageTransitionAnimation: PageTransitionAnimation.cupertino,
         );
