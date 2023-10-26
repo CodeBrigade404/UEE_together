@@ -6,6 +6,7 @@ import 'package:event_booking_app/modules/user/user_notification/notifications.d
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -75,14 +76,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 Colors.white, // Set the background color of the menu to white
             onSelected: (value) async {
               if (value == 'notification') {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const NotificationsScreen(),
-                ));
+                PersistentNavBarNavigator.pushNewScreen(
+                  context,
+                  screen: const NotificationsScreen(),
+                  withNavBar: false,
+                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                );
               } else if (value == 'logout') {
-                await logout();
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const LoginScreen(),
-                ));
+                await logout().then((value) {
+                  PersistentNavBarNavigator.pushNewScreen(
+                    context,
+                    screen: const LoginScreen(),
+                    withNavBar: false, 
+                    pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                  );
+                });
               }
             },
             itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
