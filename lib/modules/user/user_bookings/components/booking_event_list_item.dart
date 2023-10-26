@@ -1,5 +1,4 @@
 import 'package:event_booking_app/modules/user/user_bookings/screens/booking_details.dart';
-import 'package:event_booking_app/shared/cards/card.dart';
 import 'package:flutter/material.dart';
 
 class EventListItem extends StatelessWidget {
@@ -39,19 +38,18 @@ class EventListItem extends StatelessWidget {
           );
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
-          child: MyCard(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: const Icon(Icons.movie_filter),
-                title: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: Text(eventName!),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                ListTile(
+                  leading: const Icon(Icons.movie_filter),
+                  title: Text(eventName!),
+                  subtitle: Text(venueName),
                 ),
-                subtitle: Text(venueName),
-                trailing: const Icon(Icons.arrow_forward_ios_rounded),
-              ),
+                const Divider(thickness: 1)
+              ],
             ),
           ),
         )

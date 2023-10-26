@@ -1,3 +1,4 @@
+import 'package:event_booking_app/shared/appbars/default_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -15,13 +16,9 @@ class _GenerateQrCodePageState extends State<GenerateQrCodePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text(
-          'QR Code Generator',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
+      appBar: const CustomAppBar(
+        title: "E-Ticket",
+        showBackButton: true,
       ),
       body: SingleChildScrollView(
         child: Container(

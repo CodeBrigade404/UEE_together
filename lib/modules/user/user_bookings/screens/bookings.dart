@@ -1,6 +1,5 @@
 import 'package:event_booking_app/data/booking_data.dart';
 import 'package:event_booking_app/shared/appbars/default_appbar.dart';
-import 'package:event_booking_app/shared/cards/card.dart';
 import 'package:event_booking_app/models/booking_model.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_event_list_item.dart';
 import 'package:event_booking_app/modules/user/user_bookings/components/booking_status_button.dart';
@@ -22,7 +21,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
       appBar: const CustomAppBar(title: "My Bookings"),
       body: Column(
         children: [
-          const SizedBox(height: 10),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

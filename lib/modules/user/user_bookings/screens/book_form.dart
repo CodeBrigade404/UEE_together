@@ -7,6 +7,7 @@ import 'package:event_booking_app/shared/appbars/default_appbar.dart';
 import 'package:event_booking_app/shared/buttons/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class EventBookingForm extends StatefulWidget {
   const EventBookingForm({super.key});
@@ -230,12 +231,6 @@ class _EventBookingFormState extends State<EventBookingForm>
               merchantDisplayName: 'Usama'));
 
       displayPaymentSheet(stripeApiResponse: stripeApiResponse);
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const GenerateQrCodePage(),
-        ),
-      );
     } catch (e, s) {
       setState(() {
         isProcessing = false;
@@ -247,12 +242,19 @@ class _EventBookingFormState extends State<EventBookingForm>
   void displayPaymentSheet(
       {required Map<String, dynamic> stripeApiResponse}) async {
     try {
-      await Stripe.instance.presentPaymentSheet();
-      setState(() {
-        isProcessing = false;
+      await Stripe.instance.presentPaymentSheet().then((value) {
+        setState(() {
+          isProcessing = false;
+        });
+        ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(content: Text("paid successfully")));
+        PersistentNavBarNavigator.pushNewScreen(
+          context,
+          screen: const GenerateQrCodePage(),
+          withNavBar: false,
+          pageTransitionAnimation: PageTransitionAnimation.cupertino,
+        );
       });
-      ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text("paid successfully")));
     } on StripeException catch (e) {
       setState(() {
         isProcessing = false;
