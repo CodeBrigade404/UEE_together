@@ -13,6 +13,8 @@ class Payment extends StatefulWidget {
 }
 
 class _PaymentState extends State<Payment> with PaymentBehavior {
+
+
   void createPaymentIntent() async {
     setState(() {
       isProcessing = true;
@@ -87,6 +89,9 @@ class _PaymentState extends State<Payment> with PaymentBehavior {
           'Exception in displaying payment sheet in general catch ${e.toString()}');
     }
   }
+
+
+
 
   @override
   Widget build(BuildContext context) {

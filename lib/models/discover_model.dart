@@ -21,7 +21,7 @@ class Discover {
   final String eventDate;
   final String eventTime;
   final String eventVenue;
-  final String eventDescription;
+  final String eventLongDescription;
   final List<CarouselItem> artistLineup;
   final List<CarouselItem> carouselItems;
   Discover({
@@ -37,7 +37,7 @@ class Discover {
     required this.eventDate,
     required this.eventTime,
     required this.eventVenue,
-    required this.eventDescription,
+    required this.eventLongDescription,
     required this.artistLineup,
     required this.carouselItems,
   });
