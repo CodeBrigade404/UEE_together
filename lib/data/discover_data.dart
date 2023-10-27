@@ -3,7 +3,8 @@ import 'package:event_booking_app/models/discover_model.dart';
 final discoverEventImages = <Discover>[
   Discover(
     ticketId: "TK67012",
-    imageUrl: "https://www.newswire.lk/wp-content/uploads/2022/09/Sahan.jpg",
+    imageUrl:
+        "https://mytickets.lk/contents/events/poster/Romantic%20new%20event%20banner%20123.jpg",
     title: 'Hardanurawa',
     description: 'A Musical Evening for 100 HeatBeats',
     tax: 15,
@@ -223,33 +224,40 @@ final discoverEventImages = <Discover>[
 final discoverUpComingEventImages = <Discover>[
   Discover(
     ticketId: "TK0012",
-    imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004413.jpg",
-    title: 'Hardanurawa',
-    description: 'A Musical Evening for 100 HeatBeats',
-    tax: 2000,
-    type: 'Music Festival',
-    distance: 2.5,
-    date: "2023-10-21",
-    location: 'MUSAEUS COLLEGE AUDITORIUM,COLOMBO',
-    eventName: 'Hardanurawa',
-    eventDate: '2023-10-21',
-    eventTime: '19:00',
-    eventVenue: 'MUSAEUS COLLEGE AUDITORIUM,COLOMBO',
-    eventLongDescription: 'A Musical Evening for 100 HeatBeats',
+    imageUrl:
+        "https://mytickets.lk/contents/events/poster/Romantic%20new%20event%20banner%20123.jpg",
+    title: 'Romantic Evening',
+    description: 'Makes your evening more romantic.',
+    tax: 2500,
+    type: 'Indoor music concert',
+    distance: 4.54,
+    date: "2023-11-02",
+    location: 'Holy Cross auditorium - Gampaha',
+    eventName: 'Romantic Evening',
+    eventDate: '2023-11-02',
+    eventTime: '16:00',
+    eventVenue: 'Holy Cross auditorium - Gampaha',
+    eventLongDescription:
+        'Experience an enchanting indoor music concert, Romantic Evening on November 2, 2023, at Holy Cross auditorium, Gampaha. Enjoy a night of love-infused melodies in a dreamy ambiance. Unforgettable music awaits!',
     artistLineup: [
       CarouselItem(
         imageUrl:
-            "https://i.scdn.co/image/ab6761610000e5eb81936b721481db8287564ef1",
-        name: 'ROOKANTHA',
+            "https://source.boomplaymusic.com/group10/M00/09/13/4c54a472a04d43bea4aa8fc092f53eea_464_464.jpg",
+        name: 'Kasun Kalhara',
       ),
       CarouselItem(
-        imageUrl: 'https://senakabatagoda.lk/assets/img/senakaImg01.webp',
-        name: 'SENAKA',
+        imageUrl:
+            'https://yt3.googleusercontent.com/SULdpZrOJHvIseps9e0D_qJaEOsIyUSgDnSWXeNhl6mHbVVaQxLQsHR8yk5i-pB3kAwUuQ8DnA=s900-c-k-c0x00ffffff-no-rj',
+        name: 'Nadeemal',
       ),
       CarouselItem(
         imageUrl:
             'https://viberatecdn.blob.core.windows.net/entity/artist/raini-charuka-goonatillake-ZwyJa',
-        name: 'RAINI',
+        name: 'Rayani',
+      ),
+      CarouselItem(
+        imageUrl: 'https://pbs.twimg.com/media/EfnDajuVoAAeRN6.jpg',
+        name: 'Michelle',
       ),
     ],
     carouselItems: [
@@ -267,31 +275,40 @@ final discoverUpComingEventImages = <Discover>[
   ),
   Discover(
     ticketId: "TK57012",
-    imageUrl: "https://lk-aps.bmscdn.com/events/eventlisting/ET00004821.jpg",
-    title: 'Rock the Pearl Stadium',
+    imageUrl:
+        "https://mytickets.lk/contents/events/poster/Event-Banner%20CB1.jpg",
+    title: 'Celebrate the season event',
     description: 'A rock concert that will blow your mind!',
-    tax: 2000,
+    tax: 6500,
     type: 'Rock Concert',
-    distance: 1.5,
-    date: "2023-11-8",
-    location: 'Colombo, Sri Lanka',
-    eventName: 'Rock the Pearl Stadium',
-    eventDate: '2023-11-12',
+    distance: 11.51,
+    date: "2023-11-08",
+    location: 'Avendra Gardan Negombo, Sri Lanka',
+    eventName: 'Celebrate the season event',
+    eventDate: '2023-11-08',
     eventTime: '19:30',
-    eventVenue: 'Pearl Stadium',
-    eventLongDescription: 'Rock out with legendary rock bands!',
+    eventVenue: 'Avendra Gardan Negombo, Sri Lanka',
+    eventLongDescription:
+        'Discover an electrifying rock concert, Celebrate the Season Event at Avendra Gardan Negombo, Sri Lanka, on November 8, 2023. With legendary bands like Jaya Sri, Ranjan, The Gypsies, and Nilanthi Dias in the lineup, it promises an unforgettable night of music and entertainment. Dont miss it!',
     artistLineup: [
       CarouselItem(
-        imageUrl: 'Artist1ImageURL',
-        name: 'Artist 1',
+        imageUrl:
+            'https://island.lk/wp-content/uploads/2023/07/jayasri-twins.jpg',
+        name: 'Jaya Sri',
       ),
       CarouselItem(
-        imageUrl: 'Artist2ImageURL',
-        name: 'Artist 2',
+        imageUrl:
+            'https://ceylonnews24.net/wp-content/uploads/2021/09/ranjan.jpg',
+        name: 'Ranjan',
       ),
       CarouselItem(
-        imageUrl: 'Artist3ImageURL',
-        name: 'Artist 3',
+        imageUrl: 'https://www.sundaytimes.lk/220206/uploads/2.jpg',
+        name: 'The Gypsies',
+      ),
+      CarouselItem(
+        imageUrl:
+            'https://2.bp.blogspot.com/_I15Aim-FLts/TKrjveRAc3I/AAAAAAAAHbI/KXgE-Kt0bGI/s1600/019656094.jpg',
+        name: 'Nilanthi Dias',
       ),
     ],
     carouselItems: [
