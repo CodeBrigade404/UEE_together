@@ -69,7 +69,7 @@ void route(BuildContext context) {
       .get()
       .then((DocumentSnapshot documentSnapshot) {
     if (documentSnapshot.exists) {
-      String uid = user!.uid;
+      String uid = user.uid;
       if (documentSnapshot.get('rool') == "Organizer") {
         Navigator.pushReplacement(
           context,
