@@ -58,6 +58,7 @@ dependencies:
   image_card: ^0.0.4
   persistent_bottom_nav_bar: ^5.0.2
   ticket_widget: ^1.0.2
+  dotted_border: ^2.1.0
 
 dev_dependencies:
   flutter_test:

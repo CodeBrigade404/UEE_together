@@ -1,5 +1,6 @@
 import 'package:event_booking_app/modules/organizer/org_my_events/org_one_event.dart';
 import 'package:event_booking_app/models/organizer_model.dart';
+import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -113,21 +114,21 @@ class SingleEvent extends StatelessWidget {
                             child: TextButton(
                               onPressed: () {},
                               style: TextButton.styleFrom(
-                                minimumSize: const Size(80, 20),
-                                foregroundColor: const Color(0xFF142867),
+                                minimumSize: const Size(50, 10),
+                                foregroundColor: appBackgroundColor,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(
                                     20,
                                   ),
                                   side: const BorderSide(
-                                    color: Color(0xFF142867),
+                                    color: appBackgroundColor,
                                   ),
                                 ),
                               ),
                               child: Text(
                                 "Valid",
                                 style: GoogleFonts.poppins(
-                                  fontSize: 12,
+                                  fontSize: 10,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
@@ -167,14 +168,14 @@ class SingleEvent extends StatelessWidget {
                         horizontal: 20,
                       ),
                       //minimumSize: const Size(80, 20),
-                      foregroundColor: const Color(0xFF142867),
+                      foregroundColor: appBackgroundColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           20,
                         ),
                         side: const BorderSide(
-                          color: Color(0xFF142867),
-                          width: 3,
+                          color: appBackgroundColor,
+                          width: 1,
                         ),
                       ),
                     ),
@@ -199,7 +200,7 @@ class SingleEvent extends StatelessWidget {
                         vertical: 11,
                       ),
                       foregroundColor: Colors.white,
-                      backgroundColor: const Color(0xFF142867),
+                      backgroundColor: appBackgroundColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           20,

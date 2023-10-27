@@ -40,15 +40,18 @@ class EventListItem extends StatelessWidget {
           );
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
               ListTile(
                 leading: const Icon(Icons.movie_filter),
-                title: Text(eventName!,style: TextStyle(fontSize: 14),),
-                subtitle: Text(venueName),
+                title: Text(
+                  eventName!,
+                  style: TextStyle(fontSize: 13),
+                ),
+                subtitle: Text(venueName, style: TextStyle(fontSize: 12)),
                 trailing: Container(
-                    height: 35,
+                    height: 25,
                     decoration: BoxDecoration(
                       border: Border.all(color: const Color(0xffeeeeee)),
                       borderRadius: BorderRadius.circular(50),
@@ -61,7 +64,8 @@ class EventListItem extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: Text(liveStatus,
-                          style: const TextStyle(color: Colors.black)),
+                          style: const TextStyle(
+                              color: Colors.black, fontSize: 12)),
                     )),
               ),
               const Divider(thickness: 1)

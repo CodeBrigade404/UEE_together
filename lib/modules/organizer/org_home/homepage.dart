@@ -1,5 +1,4 @@
-import 'package:event_booking_app/modules/organizer/org_my_events/org_my_events.dart';
-import 'package:event_booking_app/modules/organizer/org_create_event/add_event.dart';
+import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,17 +10,8 @@ class OrganizerHomepage extends StatefulWidget {
 }
 
 class _OrganizerHomepageState extends State<OrganizerHomepage> {
-  int _selectedIndex = 1;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    String title = "Home";
     Widget activeContent = SingleChildScrollView(
       child: Column(
         children: [
@@ -47,11 +37,11 @@ class _OrganizerHomepageState extends State<OrganizerHomepage> {
                 const SizedBox(
                   height: 20,
                 ),
-                Text("Manage and PRomote your Event as you Like",
+                Text("Manage and Promote your Event as you Like",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                      fontSize: 24,
-                      color: const Color.fromARGB(255, 28, 54, 137),
+                      fontSize: 20,
+                      color: appBackgroundColor,
                       fontWeight: FontWeight.w700,
                     )),
                 const SizedBox(
@@ -72,19 +62,19 @@ class _OrganizerHomepageState extends State<OrganizerHomepage> {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 28, 54, 137),
+                    backgroundColor: appBackgroundColor,
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 40,
+                      horizontal: 120,
                       vertical: 15,
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(25),
                     ),
                   ),
                   child: Text(
                     "Get Started",
                     style: GoogleFonts.poppins(
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                     ),
@@ -97,51 +87,8 @@ class _OrganizerHomepageState extends State<OrganizerHomepage> {
       ),
     );
 
-    if (_selectedIndex == 0) {
-      activeContent = AddEventScreen(
-        onItemMethod: _onItemTapped,
-      );
-      title = "Add Event";
-    }
-    if (_selectedIndex == 2) {
-      activeContent = const MyEventsScreen();
-      title = "My Events";
-    }
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          title,
-          style: GoogleFonts.poppins(
-            fontSize: 24,
-            color: const Color(0xFF120D26),
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-      ),
       body: activeContent,
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.add_chart), label: "Add Event"),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.manage_accounts),
-            label: "My Events",
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        unselectedFontSize: 14,
-        unselectedLabelStyle: const TextStyle(
-          fontWeight: FontWeight.w600,
-        ),
-        selectedFontSize: 16,
-        selectedLabelStyle: GoogleFonts.poppins(
-          color: Colors.blue[800],
-          fontWeight: FontWeight.w500,
-        ),
-        selectedItemColor: Colors.blue[800],
-      ),
     );
   }
 }

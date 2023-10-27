@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:event_booking_app/modules/artist/artist_dashboard/artist_dashboard.dart';
 import 'package:event_booking_app/modules/auth/sign_in.dart';
+import 'package:event_booking_app/modules/organizer/org_crl.dart';
 import 'package:event_booking_app/modules/organizer/org_home/homepage.dart';
 import 'package:event_booking_app/modules/user/user_ctrl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -74,7 +75,7 @@ void route(BuildContext context) {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const OrganizerHomepage(),
+            builder: (context) => const OrgController(),
           ),
         );
       } else if (documentSnapshot.get('rool') == "Artist") {

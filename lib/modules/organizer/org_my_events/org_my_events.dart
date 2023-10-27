@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:event_booking_app/data/organizer_event.dart';
 import 'package:event_booking_app/models/organizer_model.dart';
 import 'package:event_booking_app/modules/organizer/org_my_events/components/org_single_event.dart';
+import 'package:event_booking_app/shared/appbars/default_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -84,6 +85,12 @@ class _MyEventsScreenState extends State<MyEventsScreen> {
         ),
       );
     }
-    return Scaffold(backgroundColor: Colors.white, body: content);
+    return Scaffold(
+        appBar: CustomAppBar(title: "My Events"),
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: const EdgeInsets.only(top: 16.0),
+          child: content,
+        ));
   }
 }
