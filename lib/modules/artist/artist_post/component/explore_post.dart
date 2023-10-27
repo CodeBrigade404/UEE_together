@@ -1,7 +1,5 @@
-import 'package:event_booking_app/models/discover_model.dart';
 import 'package:event_booking_app/models/post_model.dart';
 import 'package:event_booking_app/modules/artist/singlePostScreen/single_post_screen.dart';
-import 'package:event_booking_app/modules/user/user_ticket_detail/user_ticket_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_card/image_card.dart';

@@ -1,4 +1,4 @@
-import 'package:event_booking_app/modules/user/user_bookings/screens/bookings.dart';
+import 'package:event_booking_app/modules/user/user_bookings/screens/bookings_list.dart';
 import 'package:event_booking_app/modules/user/user_discover/screens/discover.dart';
 import 'package:event_booking_app/modules/user/user_profile/profile.dart';
 import 'package:event_booking_app/modules/user/user_category/user_event_category_screen.dart';
