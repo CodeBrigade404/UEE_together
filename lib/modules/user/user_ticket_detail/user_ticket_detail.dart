@@ -35,7 +35,7 @@ class _SingleEventDetailScreenState extends State<SingleEventDetailScreen> {
     return Stack(
       children: [
         Opacity(
-          opacity: 0.4,
+          opacity: 0.8,
           child: CachedNetworkImage(
             imageUrl: item.imageUrl,
             fit: BoxFit.cover,

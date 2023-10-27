@@ -1,7 +1,10 @@
 import 'package:event_booking_app/modules/user/user_dashboard/components/event_list_view.dart';
 import 'package:flutter/material.dart';
+
 class EventDisplayScreen extends StatefulWidget {
-  const EventDisplayScreen({Key? key}) : super(key: key);
+  const EventDisplayScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<EventDisplayScreen> createState() => _EventDisplayScreenState();

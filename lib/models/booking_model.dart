@@ -11,8 +11,9 @@ class Booking {
   final String venueName;
   final BookingStatus status;
   final DateTime date;
-  final String bookingId; 
-  final List<String>? images; 
+  final String bookingId;
+  final List<String>? images;
+  final String liveStatus;
 
   Booking({
     required this.time,
@@ -21,7 +22,7 @@ class Booking {
     required this.status,
     required this.date,
     required this.bookingId,
-    this.images, 
+    required this.liveStatus,
+    this.images,
   });
 }
-

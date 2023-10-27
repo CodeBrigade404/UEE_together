@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, avoid_print, sized_box_for_whitespace
+
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:event_booking_app/models/organizer_model.dart';
