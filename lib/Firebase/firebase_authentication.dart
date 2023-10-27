@@ -127,7 +127,17 @@ Future<void> signIn(
 
 Future<void> logout() async {
   final GoogleSignIn googleSignIn = GoogleSignIn();
-  FirebaseAuth auth = FirebaseAuth.instance;
-  await googleSignIn.signOut();
-  await auth.signOut();
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  try {
+    await googleSignIn.signOut();
+  } catch (e) {
+    print("Error signing out from Google: $e");
+  }
+
+  try {
+    await auth.signOut();
+  } catch (e) {
+    print("Error signing out from Firebase: $e");
+  }
 }
