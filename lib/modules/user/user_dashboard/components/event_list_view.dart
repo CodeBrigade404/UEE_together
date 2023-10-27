@@ -17,7 +17,7 @@ class _EventDisplayWidgetState extends State<EventDisplayWidget> {
   @override
   Widget build(BuildContext context) {
     return MasonryGridView.count(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       crossAxisSpacing: 15,
       crossAxisCount: 2,
       itemCount: popularEventListData.length,
@@ -66,7 +66,9 @@ class _EventDisplayWidgetState extends State<EventDisplayWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(8),
+                          topLeft: Radius.circular(8)),
                       child: CachedNetworkImage(
                         imageUrl: event.imageUrl,
                         fit: BoxFit.cover,

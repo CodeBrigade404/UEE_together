@@ -14,6 +14,7 @@ class Discover {
   final String title;
   final String description;
   final int tax;
+  final double discount;
   final String type;
   final double distance;
   final String date;
@@ -42,5 +43,6 @@ class Discover {
     required this.eventLongDescription,
     required this.artistLineup,
     required this.carouselItems,
+    required this.discount
   });
 }

@@ -45,7 +45,7 @@ class EventListItem extends StatelessWidget {
             children: [
               ListTile(
                 leading: const Icon(Icons.movie_filter),
-                title: Text(eventName!),
+                title: Text(eventName!,style: TextStyle(fontSize: 14),),
                 subtitle: Text(venueName),
                 trailing: Container(
                     height: 35,

@@ -2,7 +2,6 @@
 
 import 'package:event_booking_app/modules/user/user_flowing/artists_display_screen.dart';
 import 'package:event_booking_app/modules/user/user_category/user_event_category_screen.dart';
-import 'package:event_booking_app/modules/user/user_dashboard/screen/events_display_screen.dart';
 import 'package:event_booking_app/modules/user/user_event_location/events_locations_display_screen.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
