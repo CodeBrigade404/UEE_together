@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 });
               },
               children: const [
-                EventDisplayScreen(),
+                // EventDisplayScreen(),
                 CategoryDisplayScreen(),
                 FollowingPage(),
                 EventLocationsScreen(),

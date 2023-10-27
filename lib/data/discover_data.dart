@@ -1,10 +1,10 @@
 import 'package:event_booking_app/models/discover_model.dart';
 
-final discoverEventImages = <Discover>[
+final popularEventListData = <Discover>[
   Discover(
     ticketId: "TK67012",
     imageUrl:
-        "https://mytickets.lk/contents/events/poster/Romantic%20new%20event%20banner%20123.jpg",
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/06/EVENT-INTERSTELLAR-28-JULY-2023.jpg",
     title: 'Hardanurawa',
     description: 'A Musical Evening for 100 HeatBeats',
     tax: 15,
@@ -49,7 +49,7 @@ final discoverEventImages = <Discover>[
   Discover(
     ticketId: "TK04512",
     imageUrl:
-        "https://mytickets.lk/contents/events/poster/Event-Banner%20CB1.jpg",
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/06/EVENTS-3rd-Generation-2023-Bunuburo-Minibiroyo.jpg",
     title: 'Celebrate the season in Colombo',
     description: 'A Musical Evening for 100 HeatBeats',
     tax: 10,
@@ -95,7 +95,7 @@ final discoverEventImages = <Discover>[
   Discover(
     ticketId: "TK324512",
     imageUrl:
-        "https://mytickets.lk/contents/events/poster/THREE%20NADA%20EVENT%20BANNER.jpg",
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/06/adaraneeya-Rohana.jpg",
     title: 'Three Nada',
     description: 'Three Nada Live in Concert',
     tax: 30,
@@ -141,7 +141,7 @@ final discoverEventImages = <Discover>[
   Discover(
     ticketId: "TK0134512",
     imageUrl:
-        "https://mytickets.lk/contents/events/poster/ada%20hamu%20wemuda%20new%20EVENT%20VOL%2002.jpg",
+        "https://www.srilankantravelguide.lk/wp-content/uploads/2023/06/EVENT-THARUNAYI-THAMA-15-JULY-2023.png",
     title: 'Ada Hamuwemuda Api Vol 2.0',
     description: 'Ada Hamuwemuda Api Vol 2.0',
     tax: 20,
@@ -325,31 +325,35 @@ final discoverUpComingEventImages = <Discover>[
   Discover(
     ticketId: "TK970121",
     imageUrl:
-        "https://lk-aps.bmscdn.com/events/moviecard/inception-23-et00005059-2023-9-4-t-16-31-59.jpg",
-    title: 'Sri Lankan Fusion Beats',
+        "https://mytickets.lk/contents/events/poster/Taxila-Sarith-Surith-mytickets-EVENT%20BANNER.jpg",
+    title: 'Taxila Iconic night with sarith surith',
     description: 'A Musical Evening for 100 HeatBeats',
     tax: 2000,
     type: 'Music Fusion Concert',
     distance: 2.0,
     date: "2023-11-8",
-    location: 'Colombo, Sri Lanka',
+    location: 'Taxila Central College Ground - Horana, Sri Lanka',
     eventName: 'Sri Lankan Fusion Beats',
     eventDate: '2023-11-10',
     eventTime: '20:00',
-    eventVenue: 'Fusion Center',
-    eventLongDescription: 'A fusion of Sri Lankan musical traditions!',
+    eventVenue: 'Taxila Central College Ground - Horana, Sri Lanka',
+    eventLongDescription:
+        'Prepare to be captivated by the electrifying fusion of Sri Lankan musical traditions at the Taxila Iconic Night with Sarith Surith. This exceptional music fusion concert is set to take place on November 8, 2023, at the awe-inspiring Taxila Central College Ground in Horana, Sri Lanka.Experience the magic of music as it transcends boundaries and cultures, bringing together the rich tapestry of Sri Lankan rhythms and melodies. The evening promises to be a musical journey like no other, uniting traditional and contemporary sounds in perfect harmony.',
     artistLineup: [
       CarouselItem(
-        imageUrl: 'Artist1ImageURL',
-        name: 'Artist 1',
+        imageUrl:
+            'https://i.scdn.co/image/ab6761610000e5ebedad2d88e978346cbb3df776',
+        name: 'Sarith Surith',
       ),
       CarouselItem(
-        imageUrl: 'Artist2ImageURL',
-        name: 'Artist 2',
+        imageUrl:
+            'https://i.scdn.co/image/ab6761610000e5ebffdb4170daa915041f203bc9',
+        name: 'Hana Safa',
       ),
       CarouselItem(
-        imageUrl: 'Artist3ImageURL',
-        name: 'Artist 3',
+        imageUrl:
+            'https://viberatecdn.blob.core.windows.net/entity/artist/raini-charuka-goonatillake-ZwyJa',
+        name: 'Rayani',
       ),
     ],
     carouselItems: [
