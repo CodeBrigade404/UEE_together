@@ -8,6 +8,7 @@ class EventListItem extends StatelessWidget {
   final DateTime date;
   final String bookingId;
   final List<String>? images;
+  final String liveStatus;
 
   const EventListItem({
     Key? key,
@@ -16,6 +17,7 @@ class EventListItem extends StatelessWidget {
     required this.venueName,
     required this.date,
     required this.bookingId,
+    required this.liveStatus,
     this.images,
   }) : super(key: key);
 
@@ -39,58 +41,32 @@ class EventListItem extends StatelessWidget {
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                ListTile(
-                  leading: const Icon(Icons.movie_filter),
-                  title: Text(eventName!),
-                  subtitle: Text(venueName),
-                ),
-                const Divider(thickness: 1)
-              ],
-            ),
+          child: Column(
+            children: [
+              ListTile(
+                leading: const Icon(Icons.movie_filter),
+                title: Text(eventName!),
+                subtitle: Text(venueName),
+                trailing: Container(
+                    height: 35,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: const Color(0xffeeeeee)),
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: MaterialButton(
+                      elevation: 0,
+                      color: const Color(0xffeeeeee),
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Text(liveStatus,
+                          style: const TextStyle(color: Colors.black)),
+                    )),
+              ),
+              const Divider(thickness: 1)
+            ],
           ),
-        )
-        // child: Row(
-        //   children: [
-        //     SizedBox(
-        //       width: 80,
-        //       child: Text(time),
-        //     ),
-        //     Expanded(
-        //       child: Container(
-        //         decoration: BoxDecoration(
-        //           color: Colors.grey[200],
-        //           borderRadius: const BorderRadius.all(
-        //             Radius.circular(10),
-        //           ),
-        //         ),
-        //         padding: const EdgeInsets.all(10),
-        //         child: Row(
-        //           crossAxisAlignment: CrossAxisAlignment.start,
-        //           children: [
-        //             Column(
-        //               crossAxisAlignment: CrossAxisAlignment.start,
-        //               children: [
-        //                 Text(
-        //                   eventName??"",
-        //                   style: Theme.of(context).textTheme.titleMedium,
-        //                 ),
-        //                 Text(
-        //                   venueName,
-        //                   style: Theme.of(context).textTheme.titleSmall,
-        //                 ),
-        //               ],
-        //             ),
-        //           ],
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
-
-        );
+        ));
   }
 }

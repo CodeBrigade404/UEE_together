@@ -26,7 +26,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               BookingStatusButton(
-                label: 'Bookings',
+                label: 'Current bookings',
                 onTap: _onStatusChange,
                 status: BookingStatus.Bookings,
                 isActive: _selectedStatus == BookingStatus.Bookings,
@@ -71,12 +71,14 @@ class _BookingsScreenState extends State<BookingsScreen> {
 
     return filteredBookings.map((booking) {
       return EventListItem(
-          time: booking.time,
-          eventName: booking.eventName,
-          venueName: booking.venueName,
-          date: booking.date,
-          bookingId: booking.bookingId,
-          images: booking.images);
+        time: booking.time,
+        eventName: booking.eventName,
+        venueName: booking.venueName,
+        date: booking.date,
+        bookingId: booking.bookingId,
+        images: booking.images,
+        liveStatus: booking.liveStatus,
+      );
     }).toList();
   }
 }
