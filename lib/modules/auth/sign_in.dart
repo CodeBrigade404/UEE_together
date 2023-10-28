@@ -2,6 +2,7 @@ import 'package:event_booking_app/Firebase/firebase_authentication.dart';
 import 'package:event_booking_app/modules/auth/sign_up.dart';
 import 'package:event_booking_app/modules/auth/auth_providers.dart';
 import 'package:event_booking_app/shared/buttons/default_button.dart';
+import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -32,7 +33,9 @@ class _LoginScreenState extends State<LoginScreen> {
               Text(
                 "Welcome",
                 style: TextStyle(
-                    color: myColor, fontSize: 32, fontWeight: FontWeight.w500),
+                    color: appBackgroundColor,
+                    fontSize: 32,
+                    fontWeight: FontWeight.w500),
               ),
               const Text(
                 "Please login with your information",

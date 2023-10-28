@@ -2,9 +2,11 @@
 
 import 'package:event_booking_app/Firebase/firebase_authentication.dart';
 import 'package:event_booking_app/modules/auth/sign_in.dart';
+import 'package:event_booking_app/modules/user/user_dashboard/components/language_popup.dart';
 import 'package:event_booking_app/modules/user/user_notification/notifications.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -87,7 +89,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   PersistentNavBarNavigator.pushNewScreen(
                     context,
                     screen: const LoginScreen(),
-                    withNavBar: false, 
+                    withNavBar: false,
                     pageTransitionAnimation: PageTransitionAnimation.cupertino,
                   );
                 });
@@ -109,6 +111,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: GestureDetector(
+              onTap: () {
+                LanguageDialog.showLanguageDialog(context, (p0) => null);
+              },
+              child: const Icon(
+                FontAwesomeIcons.globe,
+                color: Colors.black87,
+                size: 18,
+              ),
+            ),
           ),
         ],
         shape: const RoundedRectangleBorder(

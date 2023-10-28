@@ -12,13 +12,13 @@ class ArtistHomeScreen extends StatefulWidget {
 }
 
 class _ArtistHomeScreenState extends State<ArtistHomeScreen> {
-  int _selectedIndex = 1;
+  // int _selectedIndex = 1;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -101,15 +101,15 @@ class _ArtistHomeScreenState extends State<ArtistHomeScreen> {
         ],
       ),
     );
-    if (_selectedIndex == 0) {
-      content = ArtistProfile(uid: widget.uid);
-      title = "Profile";
-    }
+    // if (_selectedIndex == 0) {
+    //   content = ArtistProfile(uid: widget.uid);
+    //   title = "Profile";
+    // }
 
-    if (_selectedIndex == 2) {
-      content = ArtistPost(uid: widget.uid);
-      title = "My Posts";
-    }
+    // if (_selectedIndex == 2) {
+    //   content = ArtistPost(uid: widget.uid);
+    //   title = "My Posts";
+    // }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black, // Set the background color to black
@@ -132,31 +132,31 @@ class _ArtistHomeScreenState extends State<ArtistHomeScreen> {
         ),
       ),
       body: content,
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.person_2), label: "Profile"),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.post_add),
-            label: "Posts",
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        unselectedFontSize: 14,
-        unselectedLabelStyle: TextStyle(
-          fontWeight: FontWeight.w600,
-          color: Colors.grey[600],
-        ),
-        showUnselectedLabels: true,
-        unselectedItemColor: Colors.grey[600],
-        selectedFontSize: 16,
-        selectedLabelStyle: GoogleFonts.poppins(
-          color: Colors.blue[800],
-          fontWeight: FontWeight.w500,
-        ),
-        selectedItemColor: Colors.blue[800],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const [
+      //     BottomNavigationBarItem(icon: Icon(Icons.person_2), label: "Profile"),
+      //     BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.post_add),
+      //       label: "Posts",
+      //     ),
+      //   ],
+      //   currentIndex: _selectedIndex,
+      //   onTap: _onItemTapped,
+      //   unselectedFontSize: 14,
+      //   unselectedLabelStyle: TextStyle(
+      //     fontWeight: FontWeight.w600,
+      //     color: Colors.grey[600],
+      //   ),
+      //   showUnselectedLabels: true,
+      //   unselectedItemColor: Colors.grey[600],
+      //   selectedFontSize: 16,
+      //   selectedLabelStyle: GoogleFonts.poppins(
+      //     color: Colors.blue[800],
+      //     fontWeight: FontWeight.w500,
+      //   ),
+      //   selectedItemColor: Colors.blue[800],
+      // ),
     );
   }
 }

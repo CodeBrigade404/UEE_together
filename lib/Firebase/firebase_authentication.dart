@@ -1,10 +1,9 @@
 // ignore_for_file: use_build_context_synchronously, unused_local_variable
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:event_booking_app/modules/artist/artist_dashboard/artist_dashboard.dart';
+import 'package:event_booking_app/modules/artist/art_crl.dart';
 import 'package:event_booking_app/modules/auth/sign_in.dart';
 import 'package:event_booking_app/modules/organizer/org_crl.dart';
-import 'package:event_booking_app/modules/organizer/org_home/homepage.dart';
 import 'package:event_booking_app/modules/user/user_ctrl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
@@ -82,7 +81,7 @@ void route(BuildContext context) {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => ArtistHomeScreen(uid: uid),
+            builder: (context) => ArtistController(uid: uid),
           ),
         );
       } else {

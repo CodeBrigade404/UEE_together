@@ -12,13 +12,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 final formatter = DateFormat.yMd();
 
 class AddEventScreen extends StatefulWidget {
-
-  const AddEventScreen({Key? key,})
-      : super(key: key);
+  const AddEventScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<AddEventScreen> createState() => _AddEventScreenState();
@@ -129,9 +130,17 @@ class _AddEventScreenState extends State<AddEventScreen> {
           : '', // Provide a default value if _selectedStartTime is null
       endTime: _selectedEndTime != null ? formatTime(_selectedEndTime!) : '',
     );
-    FirebaseFirestore.instance.collection("events").add(event.toJson());
-
-
+    FirebaseFirestore.instance
+        .collection("events")
+        .add(event.toJson())
+        .then((value) {
+      PersistentNavBarNavigator.pushNewScreen(
+        context,
+        screen: const MyEventsScreen(),
+        withNavBar: true,
+        pageTransitionAnimation: PageTransitionAnimation.cupertino,
+      );
+    });
   }
 
   @override
@@ -523,7 +532,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
                   onPressed: upload,
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 150, vertical: 13),
+                        horizontal: 140, vertical: 13),
                     backgroundColor: appBackgroundColor,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -532,7 +541,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
                   ),
                   child: Text(
                     "Upload",
-                    style: GoogleFonts.poppins(fontSize: 16),
+                    style: GoogleFonts.poppins(fontSize: 14),
                   ),
                 ),
                 const SizedBox(

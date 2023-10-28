@@ -1,13 +1,16 @@
+import 'package:event_booking_app/modules/artist/artist_dashboard/artist_dashboard.dart';
+import 'package:event_booking_app/modules/artist/artist_post/artist_post.dart';
+import 'package:event_booking_app/modules/artist/artist_profile/artist_profile.dart';
 import 'package:event_booking_app/modules/organizer/org_create_event/add_event.dart';
-import 'package:event_booking_app/modules/organizer/org_home/homepage.dart';
 import 'package:event_booking_app/modules/organizer/org_my_events/org_my_events.dart';
 import 'package:event_booking_app/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-class OrgController extends StatelessWidget {
-  const OrgController({super.key});
+class ArtistController extends StatelessWidget {
+  final String uid;
+  const ArtistController({super.key, required this.uid});
 
   @override
   Widget build(BuildContext context) {
@@ -46,9 +49,11 @@ class OrgController extends StatelessWidget {
 
   List<Widget> _buildScreens() {
     return [
-      const OrganizerHomepage(),
-      const AddEventScreen(),
-      const MyEventsScreen(),
+      ArtistHomeScreen(
+        uid: uid,
+      ),
+      ArtistProfile(uid: uid),
+      ArtistPost(uid: uid),
     ];
   }
 
@@ -62,13 +67,13 @@ class OrgController extends StatelessWidget {
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.add_circled),
-        title: ("Create"),
+        title: ("Profile"),
         activeColorPrimary: kPrimaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.list_bullet),
-        title: ("My Events"),
+        title: ("My Post"),
         activeColorPrimary: kPrimaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),

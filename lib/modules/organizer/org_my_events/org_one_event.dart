@@ -108,22 +108,24 @@ class OneEvent extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Container(
-                          width: 100,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(
-                              10,
-                            ),
-                            border: Border.all(
-                              color: appBackgroundColor,
-                            ),
-                            image: const DecorationImage(
-                              image: NetworkImage(
-                                "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/google_maps_helpful_hero_1.width-1200.format-webp.webp",
+                      Expanded(
+                        child: Container(
+                            width: 100,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(
+                                10,
                               ),
-                              fit: BoxFit.cover,
-                            ),
-                          ))
+                              border: Border.all(
+                                color: appBackgroundColor,
+                              ),
+                              image: const DecorationImage(
+                                image: NetworkImage(
+                                  "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/google_maps_helpful_hero_1.width-1200.format-webp.webp",
+                                ),
+                                fit: BoxFit.cover,
+                              ),
+                            )),
+                      )
                     ],
                   )),
             ),
